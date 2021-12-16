@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default class FormNewProduct extends React.Component {
-    constructor() {}
+    // constructor() {}
 
     render() {
         return <div><h2>Eu sou o FormNewProduct</h2></div>

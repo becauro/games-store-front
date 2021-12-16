@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default class Home extends React.Component {
-    constructor() {}
+    // constructor() {}
 
     render() {
         return <div><h2>Eu sou a Home</h2></div>
