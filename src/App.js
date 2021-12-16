@@ -1,13 +1,13 @@
 import React from 'react';
 import './css/App.css';
 import { Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Login from './components/Login';
-import Cart from './components/Cart';
-import Product from './components/Product';
-import FormNewProduct from './components/FormNewProduct';
-import FormNewUser from './components/FormNewUser';
-import Checkout from './components/Checkout';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Cart from './pages/Cart';
+import Product from './pages/Product';
+import FormNewProduct from './pages/FormNewProduct';
+import FormNewUser from './pages/FormNewUser';
+import Checkout from './pages/Checkout';
  
 function App() {
  return (
