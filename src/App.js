@@ -8,7 +8,7 @@ import Product from './pages/Product';
 import FormNewProduct from './pages/FormNewProduct';
 import FormNewUser from './pages/FormNewUser';
 import Checkout from './pages/Checkout';
- 
+
 function App() {
  return (
      <Routes>
@@ -22,5 +22,5 @@ function App() {
      </Routes>
  );
 }
- 
+
 export default App;
