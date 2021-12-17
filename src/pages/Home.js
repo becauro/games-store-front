@@ -11,30 +11,34 @@ export default class Home extends Component {
   constructor() {
     super();
     this.state = {
-      api: [],
       products: [],
       noFindProducts: false,
       inputText: false,
-      category: false,
       sum: 0,
     };
   }
 
   componentDidMount() {
-    getAllProducts('Games').then((response) => this.setState({ api: response }));
-    this.sumCartItems();
+    const gameCategoryId = 'MLB1144';
+    
+    getAllProducts(gameCategoryId).then(({ results }) => (
+      !results.length
+      ? this.setState({ noFindProducts: true })
+      : this.setState({ products: results })));
+
+      this.sumCartItems();
   }
 
-  handle = ({ target }) => this.setState({ [target.name]: target.value });
+  handleOnChange = ({ target }) => this.setState({ [target.name]: target.value });
 
-//   handleSearch = () => {
-//     const { inputText, category } = this.state;
+  handleSearch = () => {
+    const { inputText, category } = this.state;
 
-//     getProductsFromCategoryAndQuery(category, inputText).then(({ results }) => ( // Should Implement it
-//       results.length === 0
-//         ? this.setState({ noFindProducts: true })
-//         : this.setState({ products: results })));
-//   };
+    getProductsFromCategoryAndQuery(category, inputText).then(({ results }) => ( // Should Implement it
+      results.length === 0
+        ? this.setState({ noFindProducts: true })
+        : this.setState({ products: results })));
+  };
 
 
   sumCartItems = () => {
@@ -58,7 +62,7 @@ export default class Home extends Component {
               data-testid="query-input"
               type="text"
               placeholder="Digite aqui"
-              onChange={ this.handle }
+              onChange={ this.handleOnChange }
             />
             <button
               className="button"
