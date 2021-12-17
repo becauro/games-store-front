@@ -1,0 +1,63 @@
+.cart {
+  background-color: #252525;
+  border-radius: 5px;
+  color: #eee;
+  display: block;
+  font-size: 17px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: 1s;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.input-text {
+  background-color: #eee;
+  border: 0.5px solid #252525;
+  border-radius: 2px;
+  color: #333;
+  font-size: 17px;
+  padding: 6px;
+}
+
+.search-bar {
+  background-color: #252525;
+}
+
+.button {
+  background: none;
+  border: 2px solid #252525;
+  border-radius: 5px;
+  color: #eee;
+  cursor: pointer;
+  font-size: 17px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: 1s;
+}
+
+.button:hover {
+  background-color: #eee;
+  color: #252525;
+  transition: 1s;
+}
+
+.cart:hover {
+  background-color: #eee;
+  border-radius: 5px;
+  color: #252525;
+  transition: 1s;
+}
+
+@media ( max-width : 730px ) {
+
+  .search-input {
+    margin-left: 105px;
+  }
+}

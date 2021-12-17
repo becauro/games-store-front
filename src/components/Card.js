@@ -16,9 +16,8 @@ export default class Card extends Component {
   handleClick = () => {
     let { counter } = this.state;
     const { props } = this;
-    const { title, price, thumbnail, id, attributes, sumCartItems } = props;
-
-    const availableQuantity = props.available_quantity;
+    const { title, price, thumbnail, id, attributes, sumCartItems,
+      available_quantity: availableQuantity } = props;
 
     if (localStorage.getItem(title)) { // This verify if Product already exist in the cart (localStorage)
       const localStorageCounter = JSON.parse(localStorage.getItem(title)).counter;
