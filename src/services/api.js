@@ -5,4 +5,3 @@ export async function getAllProducts(categoryId) {
   const response = await fetch(endpoint);
   return response.json();
 }
-  
