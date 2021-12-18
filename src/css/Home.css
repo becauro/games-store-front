@@ -30,10 +30,10 @@
 }
 
 .button {
-  background: none;
+  background: rgb(47, 204, 8);
   border: 2px solid #252525;
   border-radius: 5px;
-  color: #eee;
+  color: rgb(238, 238, 238);
   cursor: pointer;
   font-size: 17px;
   padding: 8px 16px;
