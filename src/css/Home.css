@@ -1,3 +1,12 @@
+.container {
+  align-items: center;
+  background-color: #252525;
+  display: flex;
+  justify-content: space-around;
+  max-width: 100%;
+  padding: 15px 0;
+}
+
 .cart {
   background-color: #252525;
   border-radius: 5px;
@@ -37,6 +46,7 @@
   cursor: pointer;
   font-size: 17px;
   padding: 8px 16px;
+  margin: 10px;
   text-align: center;
   text-decoration: none;
   transition: 1s;
