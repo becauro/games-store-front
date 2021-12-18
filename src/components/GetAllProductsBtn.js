@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
-import { getAllProducts } from '../services/api';
 
 export class GetAllProductsBtn extends Component {
+
+  handler = () => {
+    const { getAllProductsCallback } = this.props;
+
+    getAllProductsCallback();
+  }
 
   render() {
     return (
       <button
         type='button'
-        onClick={ getAllProducts() }
+        onClick={ this.handler }
       >
-        
+        Load All Products
       </button>
     );
   }

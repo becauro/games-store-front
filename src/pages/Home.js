@@ -5,6 +5,7 @@ import {
 } from '../services/api';
 import NoFoundProducts from '../components/NoFoundProducts';
 import Card from '../components/Card';
+import { GetAllProductsBtn } from '../components/GetAllProductsBtn';
 import '../css/Home.css';
 
 export default class Home extends Component {
@@ -88,7 +89,12 @@ export default class Home extends Component {
         )}
 
         <div className="cards-container">
-          {noFindProducts ? (<NoFoundProducts />) : (products
+          {noFindProducts ? (
+            <>
+              <NoFoundProducts />
+              < GetAllProductsBtn/>
+            </>
+          ) : (products
             .map(({ ...props }, index) => (
               <Card key={ index } { ...props } sumCartItems={ this.sumCartItems } />))
           )}
