@@ -83,7 +83,7 @@ export default class Home extends Component {
           </div>
 
           <Link className="cart" data-testid="shopping-cart-button" to="cart">
-            Carrinho 🛒 &nbsp;
+            Cart 🛒 &nbsp;
             <span data-testid="shopping-cart-size">
               { sum }
             </span>
