@@ -49,9 +49,17 @@ export default class Home extends Component {
     this.setState({ sum: arrayJson.length });
   }
 
+  getAllProductsCallback = () => {
+    const gameCategoryId = 'MLB1144';
+
+    getAllProducts(gameCategoryId).then(({ results }) => (
+      this.setState({ noFindProducts: false, products: results }))
+    );
+  }
+
   render() {
     const { products, noFindProducts, category, inputText, sum } = this.state;
-    if (!products) return <h1>carregando...</h1>;
+    if (!products) return <h1>Loading...</h1>;
     return (
       <>    
         <div className="container">
@@ -92,7 +100,7 @@ export default class Home extends Component {
           {noFindProducts ? (
             <>
               <NoFoundProducts />
-              < GetAllProductsBtn/>
+              < GetAllProductsBtn getAllProductsCallback={ this.getAllProductsCallback } />
             </>
           ) : (products
             .map(({ ...props }, index) => (
