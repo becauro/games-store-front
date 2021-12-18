@@ -21,12 +21,12 @@
   background: none;
   color: #eee;
   border-radius: 5px;
+  border: 2px solid #252525;
   display: block;
   font-size: 17px;
   padding: 8px 16px;
   text-align: center;
   text-decoration: none;
-  transition: 1s;
 }
 
 .cards-container {
@@ -47,34 +47,31 @@
   padding: 6px;
 }
 
-.search-bar {
-  background-color: #c91c1c;
-}
-
 .searchButton {
   background: none;
   color: #eee;
-  border: 2px solid #252525;
   border-radius: 5px;
+  border: 2px solid #252525;
   cursor: pointer;
   font-size: 17px;
   padding: 8px 16px;
   margin: 10px;
   text-align: center;
   text-decoration: none;
-  transition: 1s;
+  transition: border 1.5s;
 }
 
 .searchButton:hover {
   background: none;
   color: #eee;
   border: 2px solid #eee;
-  transition: 1s;
+  transition: border 1.5s;
 }
 
 .cart:hover {
-  background-color: #eee;
-  color: #252525;
+  background: none;
+  color: #eee;
+  border: 2px solid #eee;
   transition: 1s;
 }
 
