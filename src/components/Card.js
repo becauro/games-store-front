@@ -8,25 +8,53 @@ export default class Card extends Component {
     super();
     this.state = {
       counter: 1,
+      inCart: false,
     };
 
-    // this.handleClick = this.handleClick.bind(this); // Não precisa
+    this.handleOnClickCartBtn = this.handleOnClickCartBtn.bind(this);
+    this.addToCart = this.addToCart.bind(this);
+    this.removeFromCart = this.removeFromCart.bind(this);
   }
 
-  handleClick = () => {
-    let { counter } = this.state;
-    const { props } = this;
-    const { title, price, thumbnail, id, attributes, sumCartItems,
-      available_quantity: availableQuantity } = props;
+  componentDidMount() {
+    this.setCartBtnLabel();
+  }
 
-    if (localStorage.getItem(title)) { // This verify if Product already exist in the cart (localStorage)
-      const localStorageCounter = JSON.parse(localStorage.getItem(title)).counter;
-      this.setState({ counter: localStorageCounter + 1 });
-      counter = localStorageCounter + 1;
+  handleOnClickCartBtn() {
+    const { props: { title } } = this;
+    const { sumCartItems } = this.props;
+
+    if (localStorage.getItem(title)) {
+      this.removeFromCart();
+      this.setState({ inCart: false });
     } else {
-      this.setState((previous) => ({ counter: previous.counter + 1 }));
+      this.addToCart();
+      this.setState({ inCart: true });
     }
-    
+    sumCartItems();
+  }
+
+  setCartBtnLabel = () => {
+    const { props: { title } } = this;
+
+    if (localStorage.getItem(title)) {
+      this.setState({ inCart: true });
+    } else {
+      this.setState({ inCart: false });
+    }
+  }
+
+  removeFromCart() {
+    const { props: { title } } = this;
+
+    localStorage.removeItem(title);
+  }
+
+  addToCart() {
+    const { props, state: { counter } } = this;
+    const { title, price, thumbnail, id, attributes } = props;
+    const availableQuantity = props.available_quantity;
+
     const object = {
       counter,
       price,
@@ -36,11 +64,9 @@ export default class Card extends Component {
       title,
       availableQuantity,
     };
-    const json = JSON.stringify(object); // Prepare to send to Cart (LocalStorage)
-
-    localStorage.setItem(title, json); // Send to Cart
-    sumCartItems(); // Callback to parent Component sum and update the quantity of Itens inside the Cart 
-  };
+    const json = JSON.stringify(object);
+    localStorage.setItem(title, json);
+  }
 
   render() {
     const {
@@ -52,7 +78,7 @@ export default class Card extends Component {
       shipping,
     } = this.props;
     const availableQuantity = Object.values(this.props)[8];
-    const { counter } = this.state;
+    const { counter, inCart } = this.state;
     return (
       <div className="container-card" data-testid="product">
         <Link
@@ -85,10 +111,10 @@ export default class Card extends Component {
           disabled={ counter > availableQuantity }
           className="add-cart-button"
           data-testid="product-add-to-cart"
-          onClick={ this.handleClick }
+          onClick={ this.handleOnClickCartBtn }
           type="button"
         >
-          Adicionar ao Carrinho
+          { !inCart ? 'Add to Cart' : 'Remove from Cart' }
         </button>
       </div>
     );
