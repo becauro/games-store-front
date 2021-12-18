@@ -52,8 +52,7 @@ export default class Card extends Component {
 
   addToCart() {
     const { props, state: { counter } } = this;
-    const { title, price, thumbnail, id, attributes } = props;
-    const availableQuantity = props.available_quantity;
+    const { title, price, thumbnail, id, attributes, available_quantity: availableQuantity } = props;
 
     const object = {
       counter,
@@ -76,8 +75,9 @@ export default class Card extends Component {
       id,
       attributes,
       shipping,
+      available_quantity: availableQuantity 
     } = this.props;
-    const availableQuantity = Object.values(this.props)[8];
+
     const { counter, inCart } = this.state;
     return (
       <div className="container-card" data-testid="product">
@@ -106,6 +106,7 @@ export default class Card extends Component {
             R$
             {price}
           </p>
+          <p> Available quantity: {availableQuantity}</p>
         </Link>
         <button
           disabled={ counter > availableQuantity }
