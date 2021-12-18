@@ -27,7 +27,7 @@ export default class Header extends React.Component {
               onChange={ this.searchInputOnChangeHandler }
             />
             <button
-              className="button"
+              className="searchButton"
               type="button"
               data-testid="query-button"
               onClick={ this.searchBtnOnClickHandler }
