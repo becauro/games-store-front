@@ -4,7 +4,7 @@ export default class NoFoundProducts extends Component {
   render() {
     return (
       <div>
-        <h1>Nenhum produto foi encontrado</h1>
+        <h1>No result found</h1>
       </div>
     );
   }
