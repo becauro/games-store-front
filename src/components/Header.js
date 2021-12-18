@@ -36,7 +36,7 @@ export default class Header extends React.Component {
             </button>
           </div>
 
-        <Link className="cart" data-testid="shopping-cart-button" to="cart">
+        <Link className="cartButton" data-testid="shopping-cart-button" to="cart">
           Cart 🛒 &nbsp;
           <span data-testid="shopping-cart-size">
             { sum }
