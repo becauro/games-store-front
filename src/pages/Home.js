@@ -78,7 +78,7 @@ export default class Home extends Component {
               data-testid="query-button"
               onClick={ this.handleSearch }
             >
-              Buscar
+              Search
             </button>
           </div>
 
@@ -92,7 +92,7 @@ export default class Home extends Component {
 
         {!category && !inputText && (
           <p data-testid="home-initial-message" id="home-initial-message">
-            Digite algum termo de pesquisa ou escolha uma categoria.
+            Type something for searching filter
           </p>
         )}
 
