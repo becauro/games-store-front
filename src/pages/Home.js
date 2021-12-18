@@ -22,9 +22,8 @@ export default class Home extends Component {
     const gameCategoryId = 'MLB1144';
     
     getAllProducts(gameCategoryId).then(({ results }) => (
-      !results.length
-      ? this.setState({ noFindProducts: true })
-      : this.setState({ products: results })));
+      this.setState({ products: results }))
+    );
 
       this.sumCartItems();
   }
