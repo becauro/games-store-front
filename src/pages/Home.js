@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import {
   getProductsFromCategoryAndQuery, getAllProducts
 } from '../services/api';
-import NoFoundProducts from './NoFoundProducts';
-import Card from './Card';
+import NoFoundProducts from '../components/NoFoundProducts';
+import Card from '../components/Card';
 import '../css/Home.css';
 
 export default class Home extends Component {
