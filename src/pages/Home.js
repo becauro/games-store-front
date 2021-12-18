@@ -91,7 +91,7 @@ export default class Home extends Component {
         </div>
 
         {!category && !inputText && (
-          <p data-testid="home-initial-message">
+          <p data-testid="home-initial-message" id="home-initial-message">
             Digite algum termo de pesquisa ou escolha uma categoria.
           </p>
         )}

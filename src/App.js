@@ -11,7 +11,8 @@ import Checkout from './pages/Checkout';
 
 function App() {
  return (
-     <Routes>
+
+    <Routes>
        <Route exact path="/" element={ <Home/> } />
        <Route path="/login" element={ <Login /> } />
        <Route path="/cart" element={ <Cart /> } />
@@ -19,7 +20,8 @@ function App() {
        <Route path="/product/new" element={ <FormNewProduct/>} />
        <Route path="/user/new" element={ <FormNewUser/>} />
        <Route path="/checkout" element={ <Checkout/>} />
-     </Routes>
+    </Routes>
+
  );
 }
 
