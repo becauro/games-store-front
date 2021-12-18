@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import {
   getProductsFromCategoryAndQuery, getAllProducts
 } from '../services/api';
 import NoFoundProducts from '../components/NoFoundProducts';
 import Card from '../components/Card';
 import { GetAllProductsBtn } from '../components/GetAllProductsBtn';
+import Header from '../components/Header';
 import '../css/Home.css';
 
 export default class Home extends Component {
@@ -17,8 +18,11 @@ export default class Home extends Component {
       inputText: false,
       sum: 0,
     };
-  }
 
+    this.header_SearchInputOnChange_Handler = this.header_SearchInputOnChange_Handler.bind(this);
+    // this.header_SearchBtnOnClick_Handler = this.header_SearchBtnOnClick_Handler.bind(this);
+  }
+  
   componentDidMount() {
     const gameCategoryId = 'MLB1144';
     
@@ -29,9 +33,13 @@ export default class Home extends Component {
       this.sumCartItems();
   }
 
-  handleOnChange = ({ target }) => this.setState({ [target.name]: target.value });
+  header_SearchInputOnChange_Handler ( target ) { 
+    console.log('Tá mudando');
 
-  handleSearch = () => {
+    this.setState({ [target.name]: target.value })
+  };
+
+  header_SearchBtnOnClick_Handler = () => {
     const { inputText, category } = this.state;
 
     getProductsFromCategoryAndQuery(category, inputText).then(({ results }) => ( // Should Implement it
@@ -59,36 +67,13 @@ export default class Home extends Component {
 
   render() {
     const { products, noFindProducts, category, inputText, sum } = this.state;
+    const dataToHeader_Props = { sum, searchInputOnChange_Handler_Callback: this.header_SearchInputOnChange_Handler,
+      searchBtnOnClick_Handler_Callback: this.header_SearchBtnOnClick_Handler };
+
     if (!products) return <h1>Loading...</h1>;
     return (
       <>    
-        <div className="container">
-          <div className="search-input">
-            <input
-              className="input-text"
-              name="inputText"
-              data-testid="query-input"
-              type="text"
-              placeholder="Digite aqui"
-              onChange={ this.handleOnChange }
-            />
-            <button
-              className="button"
-              type="button"
-              data-testid="query-button"
-              onClick={ this.handleSearch }
-            >
-              Search
-            </button>
-          </div>
-
-          <Link className="cart" data-testid="shopping-cart-button" to="cart">
-            Cart 🛒 &nbsp;
-            <span data-testid="shopping-cart-size">
-              { sum }
-            </span>
-          </Link>
-        </div>
+        <Header { ...dataToHeader_Props } />
 
         {!category && !inputText && (
           <p data-testid="home-initial-message" id="home-initial-message">
