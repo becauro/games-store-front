@@ -24,16 +24,16 @@ export default class Home extends Component {
     
     getAllProducts(gameCategoryId).then(({ results }) => (
       this.setState({ products: results }))
-    );
-
-    this.sumCartItems();
-  }
+      );
+      
+      this.sumCartItems();
+    }
     
   header_SearchInputOnChange_Handler = ( target ) => {
     
     this.setState({ [target.name]: target.value })
   };
-  
+    
   header_SearchBtnOnClick_Handler = () => {
     const { inputText, category } = this.state;
     getProductsFromCategoryAndQuery(category, inputText).then(({ results }) => {
@@ -41,8 +41,7 @@ export default class Home extends Component {
         ? this.setState({ noFindProducts: true })
         : this.setState({ noFindProducts: false, products: results })});
   };
-    
-
+  
   sumCartItems = () => {
     const objeto = { ...localStorage };
 
