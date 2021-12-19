@@ -10,7 +10,6 @@ export default class Header extends React.Component {
 
   searchBtnOnClickHandler = () => {
     const { searchBtnOnClick_Handler_Callback } = this.props;
-    console.log('Mudando no Header');
     searchBtnOnClick_Handler_Callback();
   }
 

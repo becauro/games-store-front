@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import {
   getProductsFromCategoryAndQuery, getAllProducts
 } from '../services/api';
@@ -18,9 +17,6 @@ export default class Home extends Component {
       inputText: false,
       sum: 0,
     };
-
-    this.header_SearchInputOnChange_Handler = this.header_SearchInputOnChange_Handler.bind(this);
-    // this.header_SearchBtnOnClick_Handler = this.header_SearchBtnOnClick_Handler.bind(this);
   }
   
   componentDidMount() {
@@ -30,33 +26,37 @@ export default class Home extends Component {
       this.setState({ products: results }))
     );
 
-      this.sumCartItems();
+    this.sumCartItems();
   }
-
-  header_SearchInputOnChange_Handler ( target ) { 
-    console.log('Tá mudando');
-
+    
+  header_SearchInputOnChange_Handler = ( target ) => {
+    
     this.setState({ [target.name]: target.value })
   };
-
+  
   header_SearchBtnOnClick_Handler = () => {
     const { inputText, category } = this.state;
-
-    getProductsFromCategoryAndQuery(category, inputText).then(({ results }) => ( // Should Implement it
+    getProductsFromCategoryAndQuery(category, inputText).then(({ results }) => {
       results.length === 0
         ? this.setState({ noFindProducts: true })
-        : this.setState({ products: results })));
+        : this.setState({ noFindProducts: false, products: results })});
   };
-
+    
 
   sumCartItems = () => {
     const objeto = { ...localStorage };
 
     const arrayJson = Object.values(objeto).map((e) => JSON.parse(e));
-
+    
     this.setState({ sum: arrayJson.length });
   }
 
+  /* 
+  The follow function (getAllProductsCallback) is implemented like this just because 
+  it consumes a public API, which is used for frontEnd test in that first moment.
+  This function structure and name and params need be change in the future,
+  because they will must be implemented for consume an private API which part of this application backend.
+  */
   getAllProductsCallback = () => {
     const gameCategoryId = 'MLB1144';
 
@@ -66,7 +66,7 @@ export default class Home extends Component {
   }
 
   render() {
-    const { products, noFindProducts, category, inputText, sum } = this.state;
+    const { products, noFindProducts, inputText, sum } = this.state;
     const dataToHeader_Props = { sum, searchInputOnChange_Handler_Callback: this.header_SearchInputOnChange_Handler,
       searchBtnOnClick_Handler_Callback: this.header_SearchBtnOnClick_Handler };
 
@@ -75,7 +75,7 @@ export default class Home extends Component {
       <>    
         <Header { ...dataToHeader_Props } />
 
-        {!category && !inputText && (
+        {!inputText && (
           <p data-testid="home-initial-message" id="home-initial-message">
             Type something for searching filter
           </p>
