@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import '../css/Header.css';
 /* eslint-disable */
 
 export default class Header extends React.Component {
@@ -28,7 +28,7 @@ export default class Header extends React.Component {
               onChange={ this.searchInputOnChangeHandler }
             />
             <button
-              className="searchButton"
+              className="search-button"
               type="button"
               data-testid="query-button"
               onClick={ this.searchBtnOnClickHandler }
@@ -37,7 +37,7 @@ export default class Header extends React.Component {
             </button>
           </div>
 
-        <Link className="cartButton" data-testid="shopping-cart-button" to="cart">
+        <Link className="cart-button" data-testid="shopping-cart-button" to="cart">
           Cart 🛒 &nbsp;
           <span data-testid="shopping-cart-size">
             { sum }
