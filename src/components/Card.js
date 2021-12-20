@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import '../css/Card.css';
+import '../styles/Card.css';
 
 export default class Card extends Component {
   constructor() {

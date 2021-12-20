@@ -6,7 +6,7 @@ import NoFoundProducts from '../components/NoFoundProducts';
 import Card from '../components/Card';
 import { GetAllProductsBtn } from '../components/GetAllProductsBtn';
 import Header from '../components/Header';
-import '../css/Home.css';
+import '../styles/Home.css';
 
 export default class Home extends Component {
   constructor() {
