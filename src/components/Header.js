@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+/* eslint-disable */
+
 export default class Header extends React.Component {
 
   searchInputOnChangeHandler = ({target}) => {
-    const { searchInputOnChange_Handler_Callback } = this.props;
+    const { searchInputOnChange_Handler_Callback } = this.props; 
     searchInputOnChange_Handler_Callback(target);
   }
 
