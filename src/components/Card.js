@@ -16,8 +16,8 @@ class Card extends Component {
     };
 
     this.handleOnClickCartBtn = this.handleOnClickCartBtn.bind(this);
-    this.addToCart = this.addToCart.bind(this);
-    this.removeFromCart = this.removeFromCart.bind(this);
+    this.sendToCart = this.sendToCart.bind(this);
+    this.deleteFromCart = this.deleteFromCart.bind(this);
   }
 
   componentDidMount() {
@@ -29,10 +29,10 @@ class Card extends Component {
     // const { sumCartItems } = this.props;
 
     if (localStorage.getItem(title)) {
-      this.removeFromCart();
+      this.deleteFromCart();
       this.setState({ inCart: false });
     } else {
-      this.addToCart();
+      this.sendToCart();
       this.setState({ inCart: true });
     }
     // sumCartItems(); // Implement it here instead parent component
@@ -48,13 +48,13 @@ class Card extends Component {
     }
   }
 
-  removeFromCart() {
+  deleteFromCart() {
     const { props: { title } } = this;
 
     localStorage.removeItem(title);
   }
 
-  addToCart() {
+  sendToCart() {
     const { props, state: { counter } } = this;
     const { title, price, thumbnail, id, attributes, available_quantity: availableQuantity } = props;
 
