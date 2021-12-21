@@ -93,7 +93,7 @@ class Card extends Component {
           className="link-card"
           data-testid="product-detail-link"
           to={ {
-            pathname: `/produtos/${id}`,
+            pathname: `/product/${id}`,
             state: {
               title,
               price,
