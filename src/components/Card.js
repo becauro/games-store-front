@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { creators as cartActionsCreators } from '../store/ducks/cart';
+
 import '../styles/Card.css';
 
-export default class Card extends Component {
+class Card extends Component {
   constructor() {
     super();
     this.state = {
@@ -121,6 +125,14 @@ export default class Card extends Component {
     );
   }
 }
+
+const mapStateToProps = ({ cart: cartReducer }) => cartReducer;
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(cartActionsCreators, dispatch)
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);
 
 Card.propTypes = {
   title: PropTypes.string,
