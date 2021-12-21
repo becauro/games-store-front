@@ -14,7 +14,7 @@ export default function cartProductsReducer (state = INITIAL_STATE, { type, payl
       return { ...state, cartProducts: [ ...state.cartProducts, payload ] };
     case types.REMOVE_FROM_CART:
       return {
-        ...state, cartProducts: state.cartProducts.filter(product => product.id !== payload.id)
+        ...state, cartProducts: state.cartProducts.filter(product => product.id !== payload)
       };
     case types.UPDATE_CART:
       return {

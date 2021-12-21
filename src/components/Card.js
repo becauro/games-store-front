@@ -11,7 +11,6 @@ class Card extends Component {
   constructor() {
     super();
     this.state = {
-      counter: 1,
       inCart: false,
     };
 
@@ -25,23 +24,27 @@ class Card extends Component {
   }
 
   handleOnClickCartBtn() {
-    const { props: { title } } = this;
-    // const { sumCartItems } = this.props;
 
-    if (localStorage.getItem(title)) {
+    const { id, cartReducer: { cartProducts } } = this.props;
+    const foundProdutct = cartProducts.some(item => item.id === id);
+
+
+    if (foundProdutct) {
       this.deleteFromCart();
       this.setState({ inCart: false });
     } else {
       this.sendToCart();
       this.setState({ inCart: true });
     }
-    // sumCartItems(); // Implement it here instead parent component
+
   }
 
   setCartBtnLabel = () => {
-    const { props: { title } } = this;
 
-    if (localStorage.getItem(title)) {
+    const { id, cartReducer: { cartProducts } } = this.props;
+    const foundProdutct = cartProducts.some(item => item.id === id);
+
+    if (foundProdutct) {
       this.setState({ inCart: true });
     } else {
       this.setState({ inCart: false });
@@ -49,17 +52,18 @@ class Card extends Component {
   }
 
   deleteFromCart() {
-    const { props: { title } } = this;
+    const { id, removeFromCart } = this.props;
 
-    localStorage.removeItem(title);
+    removeFromCart(id);
   }
 
   sendToCart() {
-    const { props, state: { counter } } = this;
-    const { title, price, thumbnail, id, attributes, available_quantity: availableQuantity } = props;
+
+    const { title, price, thumbnail, id, attributes, 
+      available_quantity: availableQuantity, addToCart } = this.props;
 
     const object = {
-      counter,
+      quantity: 1,
       price,
       thumbnail,
       id,
@@ -67,8 +71,8 @@ class Card extends Component {
       title,
       availableQuantity,
     };
-    const json = JSON.stringify(object);
-    localStorage.setItem(title, json);
+
+    addToCart(object);
   }
 
   render() {
@@ -82,7 +86,7 @@ class Card extends Component {
       available_quantity: availableQuantity 
     } = this.props;
 
-    const { counter, inCart } = this.state;
+    const { inCart } = this.state;
     return (
       <div className="container-card" data-testid="product">
         <Link
@@ -113,7 +117,6 @@ class Card extends Component {
           <p> Available quantity: {availableQuantity}</p>
         </Link>
         <button
-          disabled={ counter > availableQuantity }
           className="add-cart-button"
           data-testid="product-add-to-cart"
           onClick={ this.handleOnClickCartBtn }
@@ -126,7 +129,7 @@ class Card extends Component {
   }
 }
 
-const mapStateToProps = ({ cart: cartReducer }) => cartReducer;
+const mapStateToProps = ({ cart: cartReducer }) => ({ cartReducer });
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(cartActionsCreators, dispatch)

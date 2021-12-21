@@ -8,7 +8,7 @@ import Card from '../components/Card';
 import { GetAllProductsBtn } from '../components/GetAllProductsBtn';
 import Header from '../components/Header';
 import '../styles/Home.css';
-
+/* eslint-disable */
 class Home extends Component {
   constructor() {
     super();
@@ -16,7 +16,6 @@ class Home extends Component {
       products: [],
       noFindProducts: false,
       inputText: false,
-      // sum: 0,
     };
   }
   
@@ -26,8 +25,6 @@ class Home extends Component {
     getAllProducts(gameCategoryId).then(({ results }) => (
       this.setState({ products: results }))
       );
-      
-      this.sumCartItems();
     }
     
   header_SearchInputOnChange_Handler = ( target ) => {
@@ -42,14 +39,6 @@ class Home extends Component {
         ? this.setState({ noFindProducts: true })
         : this.setState({ noFindProducts: false, products: results })});
   };
-  
-  // sumCartItems = () => { // This is not neccessary with Redux. Assign a 'sum' variable directly from 'cartReducer' length
-  //   const objeto = { ...localStorage };
-
-  //   const arrayJson = Object.values(objeto).map((e) => JSON.parse(e));
-    
-  //   this.setState({ sum: arrayJson.length });
-  // }
 
   /* 
   The follow function (getAllProductsCallback) is implemented like this just because 
@@ -66,10 +55,9 @@ class Home extends Component {
   }
 
   render() {
-    // const { products, noFindProducts, inputText, sum } = this.state;
     const { products, noFindProducts, inputText } = this.state;
-    const { cartReducer: { cartProducts } } = this.props; // Make sum a variable connected directly 'cartReducer' length instead local state
-    const sum = cartProducts;
+    const { cartReducer: { cartProducts } } = this.props;
+    const sum = cartProducts.length;
     const dataToHeader_Props = { sum, searchInputOnChange_Handler_Callback: this.header_SearchInputOnChange_Handler,
       searchBtnOnClick_Handler_Callback: this.header_SearchBtnOnClick_Handler };
 
@@ -101,6 +89,6 @@ class Home extends Component {
 }
 
 
-const mapStateToProps = ({ cart: cartReducer }) => cartReducer;
+const mapStateToProps = ({ cart: cartReducer }) => ({ cartReducer });
 
 export default connect(mapStateToProps, null)(Home);
