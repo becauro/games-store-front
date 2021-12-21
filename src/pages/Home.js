@@ -72,7 +72,7 @@ class Home extends Component {
           </p>
         )}
 
-        <div className="cards-container">
+        <div className="product-card-list">
           {noFindProducts ? (
             <>
               <NoFoundProducts />
