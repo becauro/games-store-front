@@ -26,7 +26,7 @@ class Card extends Component {
 
   handleOnClickCartBtn() {
     const { props: { title } } = this;
-    const { sumCartItems } = this.props;
+    // const { sumCartItems } = this.props;
 
     if (localStorage.getItem(title)) {
       this.removeFromCart();
@@ -35,7 +35,7 @@ class Card extends Component {
       this.addToCart();
       this.setState({ inCart: true });
     }
-    sumCartItems();
+    // sumCartItems(); // Implement it here instead parent component
   }
 
   setCartBtnLabel = () => {
