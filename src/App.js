@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
 import Product from './pages/Product';
-import FormNewProduct from './pages/FormNewProduct';
+import ProductRegistration from './pages/ProductRegistration';
 import UserRegistration from './pages/UserRegistration';
 import Checkout from './pages/Checkout';
 
@@ -17,7 +17,7 @@ function App() {
        <Route path="/login" element={ <Login /> } />
        <Route path="/cart" element={ <Cart /> } />
        <Route path="/product/:id" element={ <Product/> } />
-       <Route path="/product/new" element={ <FormNewProduct/> } />
+       <Route path="/product/registration" element={ <ProductRegistration/> } />
        <Route path="/user/registration" element={ <UserRegistration/> } />
        <Route path="/checkout" element={ <Checkout/> } />
     </Routes>
