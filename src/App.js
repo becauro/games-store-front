@@ -6,7 +6,7 @@ import Login from './pages/Login';
 import Cart from './pages/Cart';
 import Product from './pages/Product';
 import FormNewProduct from './pages/FormNewProduct';
-import UserRegistrationForm from './pages/UserRegistrationForm';
+import UserRegistration from './pages/UserRegistration';
 import Checkout from './pages/Checkout';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
        <Route path="/cart" element={ <Cart /> } />
        <Route path="/product/:id" element={ <Product/> } />
        <Route path="/product/new" element={ <FormNewProduct/> } />
-       <Route path="/user/registration" element={ <UserRegistrationForm/> } />
+       <Route path="/user/registration" element={ <UserRegistration/> } />
        <Route path="/checkout" element={ <Checkout/> } />
     </Routes>
 
