@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   getProductsFromCategoryAndQuery, getAllProducts
-} from '../services/api';
+} from '../services/meli_ecommerce';
 import NoFoundProducts from '../components/NoFoundProducts';
 import Card from '../components/Card';
 import { GetAllProductsBtn } from '../components/GetAllProductsBtn';
