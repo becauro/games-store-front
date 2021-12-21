@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { creators as cartActionsCreators } from '../store/ducks/cart';
 
-import '../styles/Card.css';
+import '../styles/ProductCard.css';
 
-class Card extends Component {
+class ProductCard extends Component {
   constructor() {
     super();
     this.state = {
@@ -88,9 +88,9 @@ class Card extends Component {
 
     const { inCart } = this.state;
     return (
-      <div className="container-card" data-testid="product">
+      <div className="container-product-card" data-testid="product">
         <Link
-          className="link-card"
+          className="link-product-card"
           data-testid="product-detail-link"
           to={ {
             pathname: `/product/${id}`,
@@ -135,9 +135,9 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(cartActionsCreators, dispatch)
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Card);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductCard);
 
-Card.propTypes = {
+ProductCard.propTypes = {
   title: PropTypes.string,
   price: PropTypes.number,
   thumbnail: PropTypes.string,

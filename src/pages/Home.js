@@ -4,7 +4,7 @@ import {
   getProductsFromCategoryAndQuery, getAllProducts
 } from '../api/meli_ecommerce';
 import NoFoundProducts from '../components/NoFoundProducts';
-import Card from '../components/Card';
+import ProductCard from '../components/ProductCard';
 import { GetAllProductsBtn } from '../components/GetAllProductsBtn';
 import Header from '../components/Header';
 import '../styles/Home.css';
@@ -80,7 +80,7 @@ class Home extends Component {
             </>
           ) : (products
             .map(({ ...props }, index) => (
-              <Card key={ index } { ...props } sumCartItems={ this.sumCartItems } />))
+              <ProductCard key={ index } { ...props } sumCartItems={ this.sumCartItems } />))
           )}
         </div>
       </>
