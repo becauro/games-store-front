@@ -7,7 +7,7 @@ import NoFoundProducts from '../components/NoFoundProducts';
 import ProductCard from '../components/ProductCard';
 import { GetAllProductsBtn } from '../components/GetAllProductsBtn';
 import Header from '../components/Header';
-import '../styles/Home.css';
+import './homePage.css';
 /* eslint-disable */
 class Home extends Component {
   constructor() {
@@ -56,7 +56,7 @@ class Home extends Component {
 
   render() {
     const { products, noFindProducts, inputText } = this.state;
-    const { cartReducer: { cartProducts } } = this.props;
+    const { cartReducer: { cartProducts }, classNameStyle } = this.props;
     const sum = cartProducts.length;
     const dataToHeader_Props = { sum, searchInputOnChange_Handler_Callback: this.header_SearchInputOnChange_Handler,
       searchBtnOnClick_Handler_Callback: this.header_SearchBtnOnClick_Handler };
