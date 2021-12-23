@@ -5,7 +5,7 @@ import '../styles/Header.css';
 import Search from './Search';
 /* eslint-disable */
 
-class NewHeader extends React.Component {
+class Header extends React.Component {
 
   render() {
     const { cartReducer: { cartProducts } } = this.props;
@@ -26,4 +26,4 @@ class NewHeader extends React.Component {
 
 const mapStateToProps = ({ cart: cartReducer }) => ({ cartReducer });
 
-export default connect(mapStateToProps, null)(NewHeader)
+export default connect(mapStateToProps, null)(Header)

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import NoFoundProducts from '../components/NoFoundProducts';
-import ProductCard from '../components/ProductCard';
+import ProductCard from './ProductCard';
 import GetAllProductsBtn from '../components/GetAllProductsBtn';
-import Header from '../components/Header';
+// import Header from '../components/Header';
 import { searchActionsCreators } from '../store/ducks/search';
 import './productList.css';
 
@@ -32,7 +32,6 @@ class NewProductList extends Component {
 
     return (
       <div className={ classNameStyle }>    
-        <Header />
         {!inputText && (
           <p data-testid="home-initial-message" id="home-initial-message">
             Type something for searching filter
