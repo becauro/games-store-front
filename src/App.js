@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Home from './home-page';
-import Login from './login-page';
-import Cart from './cart-page';
-import ProductDetails from './productDetails-page';
-import ProductRegistration from './productRegistration-page';
-import UserRegistration from './userRegistration-page';
-import Checkout from './checkout-page';
+import Home from './pages/home';
+import Login from './pages/login';
+import Cart from './pages/cart';
+import ProductDetails from './pages/productDetails';
+import ProductRegistration from './pages/productRegistration';
+import UserRegistration from './pages/userRegistration';
+import Checkout from './pages/checkout';
 
 function App() {
  return (

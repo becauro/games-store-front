@@ -3,9 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import NoFoundProducts from '../NoFoundProducts';
 import ProductCard from '../ProductCard';
-import GetAllProductsBtn from '../../shared_components/GetAllProductsBtn';
-// import Header from '../components/Header';
-import { searchActionsCreators } from '../../store/ducks/search';
+import GetAllProductsBtn from '../../../shared_components/GetAllProductsBtn';
+import { searchActionsCreators } from '../../../store/ducks/search';
 import './productList.css';
 
 /* eslint-disable */
