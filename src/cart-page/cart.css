@@ -1,0 +1,8 @@
+.cart-page {
+  display: flex;
+  flex-direction: column;
+  background-color: burlywood;
+  justify-content: space-around;
+  top: 80px;
+  position: relative;
+}

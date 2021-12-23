@@ -1,14 +1,23 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { searchActionsCreators } from '../store/ducks/search';
 import '../styles/Header.css';
 /* eslint-disable */
 
-class Search extends React.Component {
+function Search({ getFilteredProducts, fieldOnChange }) {
+  const navigate = useNavigate();
+  const { pathname} = useLocation();
 
-  render() {
-    const { fieldOnChange, getFilteredProducts } = this.props;
+  function searchButton_onclick () {
+    getFilteredProducts();
+    if(pathname !== '/') {
+      navigate('/');
+      return;
+    }
+  }
+
     return (
       <div>
         <div className="search-input">
@@ -23,18 +32,18 @@ class Search extends React.Component {
             className="search-button"
             type="button"
             data-testid="query-button"
-            onClick={ () => getFilteredProducts() }
+            onClick={ () => searchButton_onclick() }
           >
             Search
           </button>
         </div>
       </div>
     )
-  }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(searchActionsCreators, dispatch)
 };
 
+// const searchWithRouter = withRouter(Search);
 export default connect(null, mapDispatchToProps)(Search);

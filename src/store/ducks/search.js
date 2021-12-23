@@ -101,8 +101,6 @@ export const searchActionsCreators = {
   fieldOnChange,
   getAllProducts: () => (dispatch) => {
     dispatch(pickUpAllProducts());
-    
-    console.log('Executou getAllProducts()');
 
     return fetchAllProducts()
     .then(({results}) => dispatch(pickUpAllProductsSuccess(results)))
@@ -110,8 +108,6 @@ export const searchActionsCreators = {
   },
   getFilteredProducts: () => (dispatch) => {
     dispatch(pickUpFilteredProducts());
-
-    console.log('Executou getFilteredProducts()');
 
     return fetchFilteredProducts(inputText)
     .then(({results}) => dispatch(pickUpFilteredProductsSuccess(results)))
