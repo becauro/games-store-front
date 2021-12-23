@@ -1,7 +1,12 @@
-body {
+/* body {
   display: flex;
   flex-direction: column;
   background-color: rgb(81 165 42);
   position: absolute;
+  margin: 0;
+} */
+
+body {
+  background-color: rgb(81 165 42);
   margin: 0;
 }

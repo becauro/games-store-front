@@ -11,16 +11,17 @@ import Checkout from './pages/checkout';
 
 function App() {
  return (
-
-    <Routes>
-       <Route exact path="/" element={ <Home/> } />
-       <Route path="/login" element={ <Login /> } />
-       <Route path="/cart" element={ <Cart /> } />
-       <Route path="/product/details/:id" element={ <ProductDetails/> } />
-       <Route path="/product/registration" element={ <ProductRegistration/> } />
-       <Route path="/user/registration" element={ <UserRegistration/> } />
-       <Route path="/checkout" element={ <Checkout/> } />
-    </Routes>
+   <div>
+      <Routes>
+         <Route exact path="/" element={ <Home/> } />
+         <Route path="/login" element={ <Login /> } />
+         <Route path="/cart" element={ <Cart /> } />
+         <Route path="/product/details/:id" element={ <ProductDetails/> } />
+         <Route path="/product/registration" element={ <ProductRegistration/> } />
+         <Route path="/user/registration" element={ <UserRegistration/> } />
+         <Route path="/checkout" element={ <Checkout/> } />
+      </Routes>
+   </div>
 
  );
 }

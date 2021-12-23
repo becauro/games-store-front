@@ -58,7 +58,7 @@ class ProductCard extends Component {
 
   sendToCart() {
 
-    const { title, price, thumbnail, id, attributes, 
+    const { title, price, thumbnail, id, attributes, shipping,
       available_quantity: availableQuantity, addToCart } = this.props;
 
     const object = {
@@ -68,6 +68,7 @@ class ProductCard extends Component {
       id,
       attributes,
       title,
+      shipping,
       availableQuantity,
     };
 
@@ -86,6 +87,7 @@ class ProductCard extends Component {
     } = this.props;
 
     const { inCart } = this.state;
+
     return (
       <div className="product-card">
         <Link
@@ -116,7 +118,7 @@ class ProductCard extends Component {
         </Link>
         <button
           className="add-cart-button"
-          onClick={ this.handleOnClickCartBtn }
+          onClick={ () => this.handleOnClickCartBtn() }
           type="button"
         >
           { !inCart ? 'Add to Cart' : 'Remove from Cart' }

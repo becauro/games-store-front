@@ -24,7 +24,6 @@ class NewProductList extends Component {
         inputText,
         loading
       },
-      classNameStyle
     } = this.props;
 
     if (loading) {
@@ -32,9 +31,9 @@ class NewProductList extends Component {
     }
 
     return (
-      <div className={ classNameStyle }>    
+      <div className="product-list">    
         {!inputText && (
-          <h3 data-testid="home-initial-message" id="home-initial-message">
+          <h3 id="home-initial-message">
             Type something for searching filter
           </h3>
         )}
@@ -47,7 +46,7 @@ class NewProductList extends Component {
             </>
           ) : (products
             .map(({ ...props }, index) => (
-              <ProductCard key={ index } { ...props } sumCartItems={ this.sumCartItems } />))
+              <ProductCard key={ index } { ...props } />))
           )}
         </div>
       </div>

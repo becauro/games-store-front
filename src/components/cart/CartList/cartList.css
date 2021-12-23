@@ -1,0 +1,19 @@
+/* .card-list {
+  display: flex;
+  justify-content: space-around;
+  top: 80px;
+  position: relative;
+} */
+
+.cart-list {
+  /* align-items: center; */
+  background-color: #2de71c;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 75%;
+  margin-left: 25%;
+  padding: 15px 0;
+  top: 50px;
+  z-index: 2;
+}
