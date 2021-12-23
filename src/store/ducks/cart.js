@@ -8,42 +8,53 @@ const INITIAL_STATE = {
   cartProducts: [],
 }
 
+let CLONE_STATE = [];
+
 export default function cartProductsReducer (state = INITIAL_STATE, { type, payload } ) {
   switch (type) {
     case types.ADD_TO_CART:
-      return { ...state, cartProducts: [ ...state.cartProducts, payload ] };
+      CLONE_STATE = { ...state, cartProducts: [ ...state.cartProducts, payload ] };
+      return CLONE_STATE;
     case types.REMOVE_FROM_CART:
-      return {
+      CLONE_STATE = {
         ...state, cartProducts: state.cartProducts.filter(product => product.id !== payload)
       };
+      return CLONE_STATE;
     case types.UPDATE_CART:
-      return {
+      CLONE_STATE = {
         ...state,
         cartProducts: state.cartProducts.map((product) => { 
           if (product.id === payload.id) {
-            return { ...product, quantity: payload };
+            return { ...payload };
           } 
           return product
         })
-    };
+      };
+      return CLONE_STATE;
     default:
-      return state;
+      CLONE_STATE = state;
+      return CLONE_STATE;
   }
 }
 
-export const creators = {
 
-  addToCart: (payload) => ({
+  const addToCart = (payload) => ({
     type: types.ADD_TO_CART,
     payload
-  }),
-  removeFromCart: (payload) => ({
+  })
+
+  const removeFromCart = (payload) => ({
     type: types.REMOVE_FROM_CART,
     payload
-  }),
-  updateCart: (payload) => ({
+  })
+
+  const updateCart = (payload) => ({
     type: types.UPDATE_CART,
     payload
-  }),
-}
+  })
 
+export const cartActionsCreators = {
+  addToCart,
+  removeFromCart,
+  updateCart
+}

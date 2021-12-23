@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import CartProductCard from './CartProductCard';
-import { creators as cartActionsCreators } from '../../../store/ducks/cart';
+// import { creators as cartActionsCreators } from '../../../store/ducks/cart';
 import './cartList.css';
 
 /* eslint-disable */
 
-class NewProductList extends Component {
+class CardList extends Component {
 
   render() {
     const { 
@@ -33,8 +33,8 @@ class NewProductList extends Component {
 
 const mapStateToProps = ({ cart: cartReducer }) => ({ cartReducer });
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(cartActionsCreators, dispatch)
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return bindActionCreators(cartActionsCreators, dispatch)
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewProductList);
+export default connect(mapStateToProps, null)(CardList);

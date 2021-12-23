@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { creators as cartActionsCreators } from '../../../../store/ducks/cart';
+import { cartActionsCreators } from '../../../../store/ducks/cart';
 import './ProductCard.css';
 
 class ProductCard extends Component {

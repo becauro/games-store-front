@@ -1,55 +1,40 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { creators as cartActionsCreators } from '../../../../store/ducks/cart';
-import './ProductCard.css';
+import './CartProductCard.css';
 
-class ProductCard extends Component {
+class CartProductCard extends Component {
 
   render() {
     const {
       title,
       price,
       thumbnail,
-      id,
-      attributes,
       shipping,
-      available_quantity: availableQuantity 
+      availableQuantity 
     } = this.props;
 
     console.log('props em CartCard');
     console.log(this.props);
     
     return (
-      <div className="product-card">
-        <Link
-          className="link-product-card"
-          to={ {
-            pathname: "/cart",
-            state: {
-              title,
-              price,
-              thumbnail,
-              id,
-              attributes,
-              shipping,
-              availableQuantity,
-            },
-          } }
-        >
-          <p className="title">{title}</p>
+      <div className="cart-product-card">
+        <div id="imagem">
           <img src={ thumbnail } alt={ title } />
-          {shipping.free_shipping ? (
-            <p>Frete Grátis!</p>
-          ) : null}
-          <p className="price">
-            R$
-            {price}
-          </p>
-          <p> Available quantity: {availableQuantity}</p>
-        </Link>
+        </div>
+          <div className='cart-item-description'>
+            <p className="title">{title}</p>
+            {shipping.free_shipping ? (
+              <p>Free shipping!</p>
+            ) : null}
+            <p className="price">
+              R$ {price}
+            </p>
+            <p> Available quantity: {availableQuantity}</p>
+          </div>
+          <div className="cart-item-price">
+            <span>Total by Item: </span>
+          </div>
       </div>
     );
   }
@@ -57,13 +42,9 @@ class ProductCard extends Component {
 
 const mapStateToProps = ({ cart: cartReducer }) => ({ cartReducer });
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(cartActionsCreators, dispatch)
-};
+export default connect(mapStateToProps, null)(CartProductCard);
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductCard);
-
-ProductCard.propTypes = {
+CartProductCard.propTypes = {
   title: PropTypes.string,
   price: PropTypes.number,
   thumbnail: PropTypes.string,
