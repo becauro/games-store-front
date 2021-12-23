@@ -1,4 +1,4 @@
-.container-product-card {
+.product-card {
   background-color: white;
   border-radius: 5px;
   display: inline-block;
@@ -9,7 +9,7 @@
   width: 250px;
 }
 
-.container-product-card:hover {
+.product-card:hover {
   box-shadow: 5px 3px 2px 5px rgb(158 157 157);
   transition: 1s;
 }

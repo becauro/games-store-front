@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import NoFoundProducts from '../NoFoundProducts';
-import ProductCard from '../ProductCard';
+import NoFoundProducts from './NoFoundProducts';
+import ProductCard from './ProductCard';
 import GetAllProductsBtn from '../../../shared_components/GetAllProductsBtn';
 import { searchActionsCreators } from '../../../store/ducks/search';
 import './productList.css';
@@ -27,14 +27,16 @@ class NewProductList extends Component {
       classNameStyle
     } = this.props;
 
-    if (loading) return <h1>Loading...</h1>;
+    if (loading) {
+      return <h2 id="loading">Loading...</h2>;
+    }
 
     return (
       <div className={ classNameStyle }>    
         {!inputText && (
-          <p data-testid="home-initial-message" id="home-initial-message">
+          <h3 data-testid="home-initial-message" id="home-initial-message">
             Type something for searching filter
-          </p>
+          </h3>
         )}
 
         <div className="product-card-list">

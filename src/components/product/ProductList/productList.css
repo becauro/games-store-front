@@ -6,10 +6,24 @@
   top: 80px;
 }
 
+#loading {
+  display: flex;
+  color: black;
+  background: none;
+  width: 100%;
+  position: relative;
+  top: 80px;
+}
+
 .product-card-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   top: 80px;
   position: relative;
+}
+
+h1 {
+  top: 90px;
+  z-index: 3;
 }

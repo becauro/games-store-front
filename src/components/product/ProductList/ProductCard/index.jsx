@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { creators as cartActionsCreators } from '../../../store/ducks/cart';
-
+import { creators as cartActionsCreators } from '../../../../store/ducks/cart';
 import './ProductCard.css';
 
 class ProductCard extends Component {
@@ -88,12 +87,11 @@ class ProductCard extends Component {
 
     const { inCart } = this.state;
     return (
-      <div className="container-product-card" data-testid="product">
+      <div className="product-card">
         <Link
           className="link-product-card"
-          data-testid="product-detail-link"
           to={ {
-            pathname: `/product/${id}`,
+            pathname: `/product/details/${id}`,
             state: {
               title,
               price,
@@ -108,7 +106,7 @@ class ProductCard extends Component {
           <p className="title">{title}</p>
           <img src={ thumbnail } alt={ title } />
           {shipping.free_shipping ? (
-            <p data-testid="free-shipping">Frete Grátis!</p>
+            <p>Frete Grátis!</p>
           ) : null}
           <p className="price">
             R$
@@ -118,7 +116,6 @@ class ProductCard extends Component {
         </Link>
         <button
           className="add-cart-button"
-          data-testid="product-add-to-cart"
           onClick={ this.handleOnClickCartBtn }
           type="button"
         >

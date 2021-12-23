@@ -21,15 +21,21 @@ const INITIAL_STATE = {
 let inputText = '';
 
 export default function searchProductsReducer (state = INITIAL_STATE, { type, payload } ) {
+  
+
   switch (type) {
     case types.FIELD_ON_CHANGE:
       inputText = payload.value;
+
+
       return { ...state, [payload.name]: payload.value };
     case types.PICK_UP_ALL_PRODUCTS:
+
       return {
         ...state, loading: true
       };
     case types.PICK_UP_ALL_PRODUCTS_SUCCESS:
+
       return {
         ...state,
         loading: false,
@@ -37,10 +43,12 @@ export default function searchProductsReducer (state = INITIAL_STATE, { type, pa
         noFindProducts: false
       };
     case types.PICK_UP_ALL_PRODUCTS_ERROR:
+
       return {
         ...state, loading: false, error: payload
     }
     case types.PICK_UP_FILTERED_PRODUCTS:
+
       return {
         ...state, loading: true
       };
@@ -67,6 +75,7 @@ export default function searchProductsReducer (state = INITIAL_STATE, { type, pa
     default:
       return state;
   }
+  
 }
 
 const fieldOnChange = (payload) => ({
