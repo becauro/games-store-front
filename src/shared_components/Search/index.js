@@ -2,8 +2,8 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { searchActionsCreators } from '../store/ducks/search';
-import '../styles/Header.css';
+import { searchActionsCreators } from '../../store/ducks/search';
+
 /* eslint-disable */
 
 function Search({ getFilteredProducts, fieldOnChange }) {

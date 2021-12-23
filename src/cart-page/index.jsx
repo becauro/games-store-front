@@ -1,6 +1,6 @@
 import React from 'react';
 import './cart.css'
-import Header from '../components/Header';
+import Header from '../shared_components/Header';
 
 export default class Cart extends React.Component {
     // constructor() {}
