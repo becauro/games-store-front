@@ -1,15 +1,25 @@
-export async function getAllProducts(categoryId) {
-    
-  const endpoint = `https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}`;
+export async function fetchAllProducts() {
+  const gameCategoryId = 'MLB1144';
+  const endpoint = `https://api.mercadolibre.com/sites/MLB/search?category=${gameCategoryId}`;
 
-  const response = await fetch(endpoint);
-  return response.json();
+  try {
+    const response = await fetch(endpoint);
+    return response.json();
+  
+  } catch (error) {
+    return error;
+  }
 }
 
-export async function getProductsFromCategoryAndQuery(categoryId, query) {
-    
-  const endpoint = `https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}&q=${query}`;
+export async function fetchFilteredProducts(query) {
+  const gameCategoryId = 'MLB1144';
+  const endpoint = `https://api.mercadolibre.com/sites/MLB/search?category=${gameCategoryId}&q=${query}`;
 
-  const response = await fetch(endpoint);
-  return response.json();
+  try {
+    const response = await fetch(endpoint);
+    return response.json();
+    
+  } catch (error) {
+    return error;
+  }
 }
