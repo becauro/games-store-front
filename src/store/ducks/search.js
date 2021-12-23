@@ -31,7 +31,10 @@ export default function searchProductsReducer (state = INITIAL_STATE, { type, pa
       };
     case types.PICK_UP_ALL_PRODUCTS_SUCCESS:
       return {
-        ...state, loading: false, products: payload
+        ...state,
+        loading: false,
+        products: payload,
+        noFindProducts: false
       };
     case types.PICK_UP_ALL_PRODUCTS_ERROR:
       return {
@@ -53,7 +56,8 @@ export default function searchProductsReducer (state = INITIAL_STATE, { type, pa
         return {
           ...state,
           loading: false,
-          products: payload
+          products: payload,
+          noFindProducts: false
         }
     }
     case types.PICK_UP_FILTERED_PRODUCTS_ERROR:
@@ -97,6 +101,8 @@ export const searchActionsCreators = {
   fieldOnChange,
   getAllProducts: () => (dispatch) => {
     dispatch(pickUpAllProducts());
+    
+    console.log('Executou getAllProducts()');
 
     return fetchAllProducts()
     .then(({results}) => dispatch(pickUpAllProductsSuccess(results)))
@@ -104,7 +110,9 @@ export const searchActionsCreators = {
   },
   getFilteredProducts: () => (dispatch) => {
     dispatch(pickUpFilteredProducts());
-    
+
+    console.log('Executou getFilteredProducts()');
+
     return fetchFilteredProducts(inputText)
     .then(({results}) => dispatch(pickUpFilteredProductsSuccess(results)))
     .catch((error) => dispatch(pickUpFilteredProductsError(error)))

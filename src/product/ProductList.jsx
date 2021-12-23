@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import NoFoundProducts from '../components/NoFoundProducts';
 import ProductCard from '../components/ProductCard';
-import { GetAllProductsBtn } from '../components/GetAllProductsBtn';
+import GetAllProductsBtn from '../components/GetAllProductsBtn';
 import Header from '../components/Header';
 import { searchActionsCreators } from '../store/ducks/search';
 import './productList.css';
@@ -13,14 +13,23 @@ import './productList.css';
 class NewProductList extends Component {
 
   componentDidMount() {
-    const { getAllProducts } = this.props; // This comes from 'searchActionsCreators' (A Redux action Creator)
+    const { getAllProducts } = this.props;
     getAllProducts();
   }
 
   render() {
-    const { searchReducer: { noFindProducts, products, inputText }, classNameStyle } = this.props;
+    const { 
+      searchReducer: { 
+        products,
+        noFindProducts,
+        inputText,
+        loading
+      },
+      classNameStyle
+    } = this.props;
 
-    if (!products) return <h1>Loading...</h1>;
+    if (loading) return <h1>Loading...</h1>;
+
     return (
       <div className={ classNameStyle }>    
         <Header />
@@ -34,7 +43,7 @@ class NewProductList extends Component {
           {noFindProducts ? (
             <>
               <NoFoundProducts />
-              <GetAllProductsBtn getAllProductsCallback={ this.getAllProductsCallback } />
+              <GetAllProductsBtn />
             </>
           ) : (products
             .map(({ ...props }, index) => (
