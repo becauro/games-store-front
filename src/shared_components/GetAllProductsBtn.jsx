@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { searchActionsCreators } from '../store/ducks/search';
+import { productsActionsCreators } from '../store/ducks/products';
 /* eslint-disable */
 
 class GetAllProductsBtn extends Component {
@@ -22,7 +22,7 @@ class GetAllProductsBtn extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(searchActionsCreators, dispatch)
+  return bindActionCreators(productsActionsCreators, dispatch)
 };
 
 export default connect(null, mapDispatchToProps)(GetAllProductsBtn);

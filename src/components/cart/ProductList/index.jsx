@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 import NoFoundProducts from './NoFoundProducts';
 import ProductCard from './ProductCard';
 import GetAllProductsBtn from '../../../shared_components/GetAllProductsBtn';
-import { productsActionsCreators } from '../../../store/ducks/products';
+import { searchActionsCreators } from '../../../store/ducks/products';
 import './productList.css';
 
 /* eslint-disable */
 
-class ProductList extends Component {
+class NewProductList extends Component {
 
   componentDidMount() {
     const { getAllProducts } = this.props;
@@ -18,12 +18,13 @@ class ProductList extends Component {
 
   render() {
     const { 
-      productsReducer: { 
+      searchReducer: { 
         products,
         noFindProducts,
         inputText,
         loading
       },
+      classNameStyle
     } = this.props;
 
     if (loading) {
@@ -31,9 +32,9 @@ class ProductList extends Component {
     }
 
     return (
-      <div className="product-list">    
+      <div className={ classNameStyle }>    
         {!inputText && (
-          <h3 id="home-initial-message">
+          <h3 data-testid="home-initial-message" id="home-initial-message">
             Type something for searching filter
           </h3>
         )}
@@ -46,7 +47,7 @@ class ProductList extends Component {
             </>
           ) : (products
             .map(({ ...props }, index) => (
-              <ProductCard key={ index } { ...props } />))
+              <ProductCard key={ index } { ...props } sumCartItems={ this.sumCartItems } />))
           )}
         </div>
       </div>
@@ -54,10 +55,10 @@ class ProductList extends Component {
   }
 }
 
-const mapStateToProps = ({ products: productsReducer }) => ({ productsReducer });
+const mapStateToProps = ({ search: searchReducer }) => ({ searchReducer });
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(productsActionsCreators, dispatch)
+  return bindActionCreators(searchActionsCreators, dispatch)
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
+export default connect(mapStateToProps, mapDispatchToProps)(NewProductList);

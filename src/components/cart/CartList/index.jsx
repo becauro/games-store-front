@@ -15,8 +15,6 @@ class CardList extends Component {
         cartProducts,
       },
     } = this.props;
-  console.log('cartProducts em CartList:');
-  console.log(cartProducts);
 
     return (
       <div className="cart-list">

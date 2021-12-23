@@ -13,9 +13,6 @@ class CartProductCard extends Component {
       shipping,
       availableQuantity 
     } = this.props;
-
-    console.log('props em CartCard');
-    console.log(this.props);
     
     return (
       <div className="cart-product-card">

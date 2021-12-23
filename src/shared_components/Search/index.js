@@ -2,7 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { searchActionsCreators } from '../../store/ducks/search';
+import { productsActionsCreators } from '../../store/ducks/products';
 
 /* eslint-disable */
 
@@ -42,7 +42,7 @@ function Search({ getFilteredProducts, fieldOnChange }) {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(searchActionsCreators, dispatch)
+  return bindActionCreators(productsActionsCreators, dispatch)
 };
 
 // const searchWithRouter = withRouter(Search);

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
 import cart from './cart';
-import search from './search';
+import products from './products';
 
 export default combineReducers({
   cart,
-  search
+  products
 });

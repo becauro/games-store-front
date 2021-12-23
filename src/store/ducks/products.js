@@ -20,7 +20,7 @@ const INITIAL_STATE = {
 
 let inputText = '';
 
-export default function searchProductsReducer (state = INITIAL_STATE, { type, payload } ) {
+export default function productsReducer (state = INITIAL_STATE, { type, payload } ) {
   
 
   switch (type) {
@@ -105,7 +105,7 @@ const pickUpFilteredProductsError = (payload) => ({
   payload
 })
 
-export const searchActionsCreators = {
+export const productsActionsCreators = {
 
   fieldOnChange,
   getAllProducts: () => (dispatch) => {
