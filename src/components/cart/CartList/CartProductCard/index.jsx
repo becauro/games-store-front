@@ -11,33 +11,39 @@ class CartProductCard extends React.Component {
 
     this.state = {
       moreQty: false,
-    };
+      inputQty: '1'
+    }
 
-    this.cartItemQty_Handler = this.cartItemQty_Handler.bind(this);
     this.fieldOnChange = this.fieldOnChange.bind(this);
     this.deleteFromCart = this.deleteFromCart.bind(this);
   }
 
-  cartItemQty_Handler(target) {
-    if (target.value === '10+') {
-      this.setState({
-        moreQty: true
-      })
-    }
-  }
 
   fieldOnChange(target) {
+    const { moreQty } = this.state;
     const { value: quantity } = target;
     const { updateCart, id, price } = this.props;
     const productSubtotal = price * parseInt(quantity);
+   
+    if(quantity !== '10+' || moreQty) {
 
-    this.setState({
-      [target.name]: target.value
-    });
-    if(quantity !== '10+') {
-      updateCart({ id, productSubtotal, quantity });
+      this.setState({
+        [target.name]: target.value
+      });
+      if (moreQty) return; 
+      return updateCart({ id, productSubtotal, quantity });
     }
 
+    this.setState({
+      moreQty: true
+    })
+  }
+
+  handleUpdateQty() {
+    const { inputQty: quantity } = this.state;
+    const { updateCart, id, price } = this.props;
+    const productSubtotal = price * parseInt(quantity);
+    updateCart({ id, productSubtotal, quantity });
   }
 
   deleteFromCart() {
@@ -53,6 +59,7 @@ class CartProductCard extends React.Component {
       title,
       price,
       thumbnail,
+      // quantity,
       shipping,
       availableQuantity,
       productSubtotal
@@ -77,10 +84,10 @@ class CartProductCard extends React.Component {
             <div className='cart-item-input-qty'>
             <span>Qty:</span> &nbsp;
             { !moreQty
-              ? <select name="inputQty" onClick={ ({target}) => this.cartItemQty_Handler(target)}
-                  onChange={ ({target}) => this.fieldOnChange(target) }
-                >
-                {['1', '2', '3', '4', '5', '6', '7', '8', '9', '10+']
+              ?
+              <select name="inputQty" onChange={ ({target}) => this.fieldOnChange(target) }>
+                {
+                  ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10+']
                   .map((item) =>
                     (
                       <option key={item} value={item}>
@@ -90,9 +97,16 @@ class CartProductCard extends React.Component {
                   )
                 }
               </select>
-              : <input name="inputQty" type="text" autoFocus="autofocus"  onChange={ ({target}) => this.fieldOnChange(target) } />
+              :
+              (
+                <>
+                  <input name="inputQty" type="text" autoFocus="autofocus"  onChange={ ({target}) => this.fieldOnChange(target) } />
+                  <button type="button" onClick={ () => this.handleUpdateQty() }>Update Qty</button>
+                </>
+              )
             }
             </div>
+            {/* <span> Choosen Quantity: { quantity } </span> */}
           <button type="button" onClick={ () => this.deleteFromCart() }>Remove</button>
           </div>
           <div className="cart-item-subtotal">
