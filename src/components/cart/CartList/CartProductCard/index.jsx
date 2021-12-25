@@ -59,7 +59,7 @@ class CartProductCard extends React.Component {
       title,
       price,
       thumbnail,
-      // quantity,
+      quantity,
       shipping,
       availableQuantity,
       productSubtotal
@@ -70,19 +70,19 @@ class CartProductCard extends React.Component {
         <div className="cart-item-image">
           <img src={ thumbnail } alt={ title } />
         </div>
-          <div className='cart-item-description'>
-            <p className="cart-item-title">{title}</p>
-            {shipping.free_shipping ? (
-              <p>Free shipping!</p>
-            ) : null}
-            <p className="cart-item-price">
-              R$ {price}
-            </p>
-            <p> Available quantity: {availableQuantity}</p>
-          </div>
-          <div className='cart-item-inputs'>
-            <div className='cart-item-input-qty'>
-            <span>Qty:</span> &nbsp;
+        <div className='cart-item-description'>
+          <p className="cart-item-title">{title}</p>
+          {shipping.free_shipping ? (
+            <p>Free shipping!</p>
+          ) : null}
+          <p className="cart-item-price">
+            R$ {price}
+          </p>
+          <p> Available quantity: {availableQuantity}</p>
+        </div>
+        <div className='cart-item-io'>
+          <div className='cart-item-in-qty'>
+            <span id="cart-item-in-qty-label">Qty:</span> &nbsp;
             { !moreQty
               ?
               <select name="inputQty" onChange={ ({target}) => this.fieldOnChange(target) }>
@@ -101,17 +101,17 @@ class CartProductCard extends React.Component {
               (
                 <>
                   <input name="inputQty" type="text" autoFocus="autofocus"  onChange={ ({target}) => this.fieldOnChange(target) } />
-                  <button type="button" onClick={ () => this.handleUpdateQty() }>Update Qty</button>
+                  <button id="cart-item-in-qty-button" type="button" onClick={ () => this.handleUpdateQty() }>Update Qty</button>
                 </>
               )
             }
-            </div>
-            {/* <span> Choosen Quantity: { quantity } </span> */}
-          <button type="button" onClick={ () => this.deleteFromCart() }>Remove</button>
           </div>
-          <div className="cart-item-subtotal">
-            <p>SubTotal (by Item): <span>R$ { productSubtotal } </span></p> 
-          </div>
+          <span id="cart-item-out-qty"> Choosen Quantity: { quantity } </span>
+          <button id="cart-item-io-remove-button" type="button" onClick={ () => this.deleteFromCart() }>Remove</button>
+        </div>
+        <div className="cart-item-subtotal">
+          <p>SubTotal (by Item): <span>R$ { productSubtotal } </span></p> 
+        </div>
       </div>
     );
   }

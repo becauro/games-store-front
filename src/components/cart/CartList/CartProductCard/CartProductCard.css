@@ -14,17 +14,97 @@
   transition: 1s;
 }
 
+/* SECTION 1 */
+
 .cart-item-image {
-  /* height: auto; */
   display: flex;
   max-width: 15%;
   width: fit-content;
-  margin: 10px;
+  margin-right: 10px;
   margin-left: 20px;
-  margin-bottom: 20px;
   background-color: rgb(107 95 160);
   position: relative;
 }
+
+/* SECTION 2 */
+
+.cart-item-description {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: blanchedalmond;
+  position: relative;
+}
+
+.cart-item-title {
+  font-size: large;
+}
+
+.cart-item-price {
+  font-size: small;
+  background-color: blueviolet;
+}
+
+/* SECTION 3 */
+
+.cart-item-io {
+  display: flex;
+  flex-direction: column;
+  background-color: chocolate;
+  margin-right: 10px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.cart-item-in-qty {
+  display: flex;
+  background-color: cadetblue;
+  margin-bottom: 5px;
+}
+
+#cart-item-in-qty-label {
+  display: flex;
+  margin-right: 5px;
+}
+
+.cart-item-in-qty select {
+  display: flex;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.cart-item-in-qty input {
+  display: flex;
+  max-height: 20px;
+  margin-right: 5px;
+  width: 25px;
+  background-color: tomato;
+}
+
+#cart-item-in-qty-button {
+  display: flex;
+  margin-left: 5px;
+  background-color: yellow;
+  color: aqua;
+}
+
+#cart-item-out-qty {
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#cart-item-io-remove-button {
+  display: flex;
+  background-color: blueviolet;
+  color: aliceblue;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* SECTION 4 */
 
 .cart-item-subtotal {
   display: flex;
@@ -34,68 +114,4 @@
   margin-left: 520px;
   background-color: aqua;
   position: relative;
-}
-
-.add-cart-button {
-  background-color: #eee;
-  border: 1px solid #252525;
-  border-radius: 2px;
-  color: #333;
-  margin-bottom: 15px;
-  padding: 4px;
-}
-
-.cart-item-description {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  margin: 10px;
-  background-color: blanchedalmond;
-  position: relative;
-}
-
-.cart-item-title {
-  font-size: large;
-}
-
-.cart-item-inputs {
-  display: flex;
-  flex-direction: column;
-  background-color: chocolate;
-}
-
-.cart-item-input-qty {
-  display: flex;
-  background-color: cadetblue;
-  height: fit-content;
-}
-
-.cart-item-input-qty span {
-  display: flex;
-  height: 15px;
-  margin-top: 10px;
-}
-
-.cart-item-input-qty select {
-  display: flex;
-  height: 15px;
-  margin-top: 10px;
-}
-
-.cart-item-input-qty input {
-  display: flex;
-  max-height: 10px;
-  font-size: 10px;
-  width: 25px;
-  margin-top: 10px;
-}
-
-.cart-item-inputs button {
-  display: flex;
-  margin-top: 10px;
-}
-
-.cart-item-price {
-  font-size: small;
-  background-color: blueviolet;
 }
