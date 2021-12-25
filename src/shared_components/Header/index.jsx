@@ -5,13 +5,11 @@ import './Header.css';
 import Search from '../Search';
 /* eslint-disable */
 
-class Header extends React.Component {
+function Header({cartReducer: { cartProducts }}) {
 
-  render() {
-    const { cartReducer: { cartProducts } } = this.props;
-    const sum = cartProducts.length;
-      return (
-      <div className="header">
+  const sum = cartProducts.length;
+    return (
+    <div className="header">
       <Search />
       <Link className="cart-button" to="cart">
         Cart 🛒 &nbsp;
@@ -20,8 +18,7 @@ class Header extends React.Component {
         </span>
       </Link>
     </div>
-    )
-  }
+  )
 }
 
 const mapStateToProps = ({ cart: cartReducer }) => ({ cartReducer });
