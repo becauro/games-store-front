@@ -16,21 +16,21 @@ class CartProductCard extends Component {
     
     return (
       <div className="cart-product-card">
-        <div id="imagem">
+        <div className="cart-item-image">
           <img src={ thumbnail } alt={ title } />
         </div>
           <div className='cart-item-description'>
-            <p className="title">{title}</p>
+            <p className="cart-item-title">{title}</p>
             {shipping.free_shipping ? (
               <p>Free shipping!</p>
             ) : null}
-            <p className="price">
+            <p className="cart-item-price">
               R$ {price}
             </p>
             <p> Available quantity: {availableQuantity}</p>
           </div>
-          <div className="cart-item-price">
-            <span>Total by Item: </span>
+          <div className="cart-item-subtotal">
+            <p>SubTotal (by Item): <span>R$ </span></p> 
           </div>
       </div>
     );
