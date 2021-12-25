@@ -34,7 +34,10 @@ class CartProductCard extends React.Component {
     this.setState({
       [target.name]: target.value
     });
-    updateCart({ id, productSubtotal, quantity });
+    if(quantity !== '10+') {
+      updateCart({ id, productSubtotal, quantity });
+    }
+
   }
 
   deleteFromCart() {
@@ -77,7 +80,7 @@ class CartProductCard extends React.Component {
               ? <select name="inputQty" onClick={ ({target}) => this.cartItemQty_Handler(target)}
                   onChange={ ({target}) => this.fieldOnChange(target) }
                 >
-                {['1', '2', '3', '4', '5', '6', '7', '8', '9', '+10']
+                {['1', '2', '3', '4', '5', '6', '7', '8', '9', '10+']
                   .map((item) =>
                     (
                       <option key={item} value={item}>
@@ -86,6 +89,7 @@ class CartProductCard extends React.Component {
                     )
                   )
                 }
+                <option></option>
               </select>
               : <input name="inputQty" type="text" autoFocus="autofocus"  onChange={ ({target}) => this.fieldOnChange(target) } />
             }

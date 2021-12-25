@@ -25,10 +25,7 @@ export default function cartProductsReducer (state = INITIAL_STATE, { type, payl
         ...state,
         cartProducts: state.cartProducts.map((product) => {
           if (product.id === payload.id) {
-            console.log('Aqui foi');
             const { productSubtotal, quantity } = payload;
-            console.log('subtotal que chegou no reducer');
-            console.log(productSubtotal);
             return { ...product, productSubtotal, quantity };
           } 
           return product

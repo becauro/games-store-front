@@ -16,7 +16,7 @@ function Header({cartReducer: { cartProducts }}) {
     }
   }
 
-  const sum = cartProducts.length;
+  const sum = cartProducts.reduce((acc, item) => ( acc + parseInt(item.quantity)), 0 );
     return (
     <div className="header">
       <Search />
