@@ -6,22 +6,25 @@ export const types = {
 
 const INITIAL_STATE = {
   cartProducts: [],
+  sumSubTotal: 0,
+  sumQuantity: 0
 }
 
-let CLONE_STATE = [];
+let NEW_STATE = {};
 
 export default function cartProductsReducer (state = INITIAL_STATE, { type, payload } ) {
   switch (type) {
     case types.ADD_TO_CART:
-      CLONE_STATE = { ...state, cartProducts: [ ...state.cartProducts, payload ] };
-      return CLONE_STATE;
+      NEW_STATE = { ...state, cartProducts: [ ...state.cartProducts, payload ] };
+      return updateQtyAndTotal(NEW_STATE);
+
     case types.REMOVE_FROM_CART:
-      CLONE_STATE = {
+      NEW_STATE = {
         ...state, cartProducts: state.cartProducts.filter(product => product.id !== payload)
       };
-      return CLONE_STATE;
+      return updateQtyAndTotal(NEW_STATE);
     case types.UPDATE_CART:
-      CLONE_STATE = {
+      NEW_STATE = {
         ...state,
         cartProducts: state.cartProducts.map((product) => {
           if (product.id === payload.id) {
@@ -31,13 +34,20 @@ export default function cartProductsReducer (state = INITIAL_STATE, { type, payl
           return product
         })
       };
-      return CLONE_STATE;
+      return updateQtyAndTotal(NEW_STATE);
     default:
-      CLONE_STATE = state;
-      return CLONE_STATE;
+      return updateQtyAndTotal(state);
   }
 }
 
+
+const updateQtyAndTotal = (newState) => {
+  const { cartProducts } = newState;
+  const sumQuantity = cartProducts.reduce((acc, item) => ( acc + parseInt(item.quantity)), 0 );
+  const sumSubTotal = cartProducts.reduce((acc, item) => (acc + parseInt(item.productSubtotal)), 0 );
+
+  return { ...newState, sumQuantity, sumSubTotal };
+}
 
   const addToCart = (payload) => ({
     type: types.ADD_TO_CART,
