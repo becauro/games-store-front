@@ -19,7 +19,7 @@ class CartProductCard extends React.Component {
   }
 
   cartItemQty_Handler(target) {
-    if (target.value === '+10') {
+    if (target.value === '10+') {
       this.setState({
         moreQty: true
       })
@@ -89,7 +89,6 @@ class CartProductCard extends React.Component {
                     )
                   )
                 }
-                <option></option>
               </select>
               : <input name="inputQty" type="text" autoFocus="autofocus"  onChange={ ({target}) => this.fieldOnChange(target) } />
             }
