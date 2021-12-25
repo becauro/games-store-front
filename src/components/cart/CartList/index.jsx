@@ -5,7 +5,7 @@ import './cartList.css';
 
 /* eslint-disable */
 
-class CardList extends Component {
+class CartList extends Component {
 
   render() {
     const { 
@@ -19,8 +19,8 @@ class CardList extends Component {
           {cartProducts.length === 0 ? (
               <h3>Empty Cart</h3>
           ) : (cartProducts
-            .map(({ ...props }, index) => (
-              <CartProductCard key={ index } { ...props } />))
+            .map(({ ...productData }, index) => (
+              <CartProductCard key={ index } { ...productData } />))
           )}
       </div>
     );
@@ -29,4 +29,4 @@ class CardList extends Component {
 
 const mapStateToProps = ({ cart: cartReducer }) => ({ cartReducer });
 
-export default connect(mapStateToProps, null)(CardList);
+export default connect(mapStateToProps, null)(CartList);

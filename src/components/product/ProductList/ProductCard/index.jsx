@@ -62,6 +62,7 @@ class ProductCard extends Component {
       available_quantity: availableQuantity, addToCart } = this.props;
 
     const object = {
+      productSubtotal: price,
       quantity: 1,
       price,
       thumbnail,
