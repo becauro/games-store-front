@@ -1,0 +1,20 @@
+.search-button {
+  background: none;
+  color: #eee;
+  border-radius: 5px;
+  border: 2px solid #252525;
+  cursor: pointer;
+  font-size: 17px;
+  padding: 8px 16px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: border 1.5s;
+}
+
+.search-button:hover {
+  background: none;
+  color: #eee;
+  border: 2px solid #eee;
+  transition: border 1.5s;
+}

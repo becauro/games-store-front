@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { productsActionsCreators } from '../../store/ducks/products';
+import './Search.css';
 
 /* eslint-disable */
 
