@@ -1,14 +1,20 @@
 .cart-subtotal {
-    background-color: white;
-    border-radius: 15px;
-    display: flex;
-    justify-content: start;
-    margin-top: 10%;
-    margin-left: 80%;
-    padding: 1%;
-    height: 300px;
-    width: 15%;
-    text-align: center;
-    transition: 1s;
-    position: absolute;
-  }
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-top: 10%;
+  margin-left: 80%;
+  padding: 1%;
+  height: 300px;
+  width: 15%;
+  text-align: center;
+  transition: 1s;
+  position: absolute;
+}
+
+button {
+  background-color: rgb(81 165 42);
+  color: white;
+}

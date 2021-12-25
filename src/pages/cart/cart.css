@@ -1,6 +1,5 @@
 .cart-page {
   display: flex;
-  /* flex-direction: column; */
   background-color: rgb(39 51 218);
   width: 100vw;
   height: 100vw;
@@ -10,4 +9,5 @@
 
 h1 {
   margin-top: 7%;
+  color: white;
 }
