@@ -11,7 +11,7 @@ export default class Cart extends React.Component {
     return (
       <div className="cart-page">
         <Header />
-        <h2>I am Cart</h2>
+        <h1> Cart</h1>
         <CartList />
         <CartSubtotal />
       </div>

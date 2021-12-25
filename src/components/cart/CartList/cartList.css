@@ -10,9 +10,11 @@
   background-color: #2de71c;
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 75%;
   height: fit-content;
-  padding: 15px 0;
-  top: 50px;
+  /* padding: 15px 0; */
+  margin-top: 10%;
+  margin-left: 0;
   z-index: 1;
+  position: absolute;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import './cartList.css';
+import './CartSubtotal.css';
 
 /* eslint-disable */
 
@@ -43,7 +43,7 @@ class CartSubtotal extends Component {
     const { cartReducer: { sumSubTotal, sumQuantity } } = this.props;
 
     return (
-      <div className="cart-item-subtotal">
+      <div className="cart-subtotal">
         <p>SubTotal ({sumQuantity} Item(s)): <span>R$ { sumSubTotal } </span></p> 
       </div>
     );
