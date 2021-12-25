@@ -18,32 +18,31 @@ function Search({ getFilteredProducts, fieldOnChange }) {
     }
   }
 
-    return (
-      <div>
-        <div className="search-input">
-          <input
-            className="input-text"
-            name="inputText"
-            data-testid="query-input"
-            type="text"
-            onChange={ ({target}) => fieldOnChange(target) }
-          />
-          <button
-            className="search-button"
-            type="button"
-            data-testid="query-button"
-            onClick={ () => searchButton_onclick() }
-          >
-            Search
-          </button>
-        </div>
+  return (
+    <div>
+      <div className="search-input">
+        <input
+          className="input-text"
+          name="inputText"
+          data-testid="query-input"
+          type="text"
+          onChange={ ({target}) => fieldOnChange(target) }
+        />
+        <button
+          className="search-button"
+          type="button"
+          data-testid="query-button"
+          onClick={ () => searchButton_onclick() }
+        >
+          Search
+        </button>
       </div>
-    )
+    </div>
+  )
 }
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(productsActionsCreators, dispatch)
 };
 
-// const searchWithRouter = withRouter(Search);
 export default connect(null, mapDispatchToProps)(Search);
