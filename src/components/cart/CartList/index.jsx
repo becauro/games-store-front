@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-// import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import CartProductCard from './CartProductCard';
-// import { creators as cartActionsCreators } from '../../../store/ducks/cart';
 import './cartList.css';
 
 /* eslint-disable */
@@ -30,9 +28,5 @@ class CardList extends Component {
 }
 
 const mapStateToProps = ({ cart: cartReducer }) => ({ cartReducer });
-
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators(cartActionsCreators, dispatch)
-// };
 
 export default connect(mapStateToProps, null)(CardList);

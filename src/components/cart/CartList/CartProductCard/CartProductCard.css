@@ -60,15 +60,29 @@
 
 .cart-item-inputs {
   display: flex;
+  flex-direction: column;
+  background-color: chocolate;
 }
 
-.cart-item-inputs select {
+.cart-item-input-qty {
+  display: flex;
+  background-color: cadetblue;
+  height: fit-content;
+}
+
+.cart-item-input-qty span {
   display: flex;
   height: 15px;
   margin-top: 10px;
 }
 
-.cart-item-inputs input {
+.cart-item-input-qty select {
+  display: flex;
+  height: 15px;
+  margin-top: 10px;
+}
+
+.cart-item-input-qty input {
   display: flex;
   max-height: 10px;
   font-size: 10px;
@@ -76,9 +90,8 @@
   margin-top: 10px;
 }
 
-.cart-item-inputs span {
+.cart-item-inputs button {
   display: flex;
-  height: 15px;
   margin-top: 10px;
 }
 

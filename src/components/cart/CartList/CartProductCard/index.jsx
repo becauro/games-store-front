@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { cartActionsCreators } from '../../../../store/ducks/cart';
 import './CartProductCard.css';
 
 class CartProductCard extends React.Component {
@@ -14,11 +16,7 @@ class CartProductCard extends React.Component {
 
     this.cartItemQty_Handler = this.cartItemQty_Handler.bind(this);
     this.fieldOnChange = this.fieldOnChange.bind(this);
-  }
-
-  componentDidUpdate() {
-    const { inputQty } = this.state;
-    console.log(inputQty);
+    this.deleteFromCart = this.deleteFromCart.bind(this);
   }
 
   cartItemQty_Handler(target) {
@@ -33,6 +31,12 @@ class CartProductCard extends React.Component {
     this.setState({
       [target.name]: target.value
     });
+  }
+
+  deleteFromCart() {
+    const { id, removeFromCart } = this.props;
+
+    removeFromCart(id);
   }
 
   render() {
@@ -62,6 +66,7 @@ class CartProductCard extends React.Component {
             <p> Available quantity: {availableQuantity}</p>
           </div>
           <div className='cart-item-inputs'>
+            <div className='cart-item-input-qty'>
             <span>Qty:</span> &nbsp;
             { !moreQty
               ? <select name="inputQty" onClick={ ({target}) => this.cartItemQty_Handler(target)}
@@ -79,6 +84,8 @@ class CartProductCard extends React.Component {
               </select>
               : <input name="inputQty" type="text" autoFocus="autofocus"  onChange={ ({target}) => this.fieldOnChange(target) } />
             }
+            </div>
+          <button type="button" onClick={() => this.deleteFromCart()}>Remove</button>
           </div>
           <div className="cart-item-subtotal">
             <p>SubTotal (by Item): <span>R$ </span></p> 
@@ -90,7 +97,11 @@ class CartProductCard extends React.Component {
 
 const mapStateToProps = ({ cart: cartReducer }) => ({ cartReducer });
 
-export default connect(mapStateToProps, null)(CartProductCard);
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(cartActionsCreators, dispatch)
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartProductCard);
 
 CartProductCard.propTypes = {
   title: PropTypes.string,
