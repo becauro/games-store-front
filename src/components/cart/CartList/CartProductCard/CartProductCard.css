@@ -58,6 +58,30 @@
   font-size: large;
 }
 
+.cart-item-inputs {
+  display: flex;
+}
+
+.cart-item-inputs select {
+  display: flex;
+  height: 15px;
+  margin-top: 10px;
+}
+
+.cart-item-inputs input {
+  display: flex;
+  max-height: 10px;
+  font-size: 10px;
+  width: 25px;
+  margin-top: 10px;
+}
+
+.cart-item-inputs span {
+  display: flex;
+  height: 15px;
+  margin-top: 10px;
+}
+
 .cart-item-price {
   font-size: small;
   background-color: blueviolet;
