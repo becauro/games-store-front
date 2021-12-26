@@ -113,7 +113,6 @@ export const productsActionsCreators = {
 
     return fetchAllProducts()
     .then(({results}) => {
-      console.log(results[0]);
       dispatch(pickUpAllProductsSuccess(results))
     })
     .catch((error) => { 
