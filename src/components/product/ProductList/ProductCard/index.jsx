@@ -58,18 +58,17 @@ class ProductCard extends Component {
 
   sendToCart() {
 
-    const { title, price, thumbnail, id, attributes, shipping,
-      available_quantity: availableQuantity, addToCart } = this.props;
+    const { name: title, price, thumbnail, id, description,
+      quantity: availableQuantity, addToCart } = this.props;
 
     const object = {
       productSubtotal: price,
-      quantity: 1,
+      choosenQty: 1,
       price,
       thumbnail,
       id,
-      attributes,
+      description,
       title,
-      shipping,
       availableQuantity,
     };
 
@@ -77,15 +76,8 @@ class ProductCard extends Component {
   }
 
   render() {
-    const {
-      title,
-      price,
-      thumbnail,
-      id,
-      attributes,
-      shipping,
-      available_quantity: availableQuantity 
-    } = this.props;
+    const { name: title, price, thumbnail, id, description,
+      quantity: availableQuantity } = this.props;
 
     const { inCart } = this.state;
 
@@ -96,21 +88,13 @@ class ProductCard extends Component {
           to={ {
             pathname: `/product/details/${id}`,
             state: {
-              title,
-              price,
-              thumbnail,
-              id,
-              attributes,
-              shipping,
-              availableQuantity,
+              title, price, thumbnail, id, description,
+              availableQuantity
             },
           } }
         >
           <p className="title">{title}</p>
           <img src={ thumbnail } alt={ title } />
-          {shipping.free_shipping ? (
-            <p>Frete Grátis!</p>
-          ) : null}
           <p className="price">
             R$
             {price}
@@ -142,5 +126,5 @@ ProductCard.propTypes = {
   price: PropTypes.number,
   thumbnail: PropTypes.string,
   id: PropTypes.string,
-  free_shipping: PropTypes.bool,
+  ion: PropTypes.bool,
 }.isRequired;

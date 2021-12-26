@@ -28,8 +28,8 @@ export default function cartProductsReducer (state = INITIAL_STATE, { type, payl
         ...state,
         cartProducts: state.cartProducts.map((product) => {
           if (product.id === payload.id) {
-            const { productSubtotal, quantity } = payload;
-            return { ...product, productSubtotal, quantity };
+            const { productSubtotal, choosenQty } = payload;
+            return { ...product, productSubtotal, choosenQty };
           } 
           return product
         })
@@ -43,7 +43,7 @@ export default function cartProductsReducer (state = INITIAL_STATE, { type, payl
 
 const updateQtyAndTotal = (newState) => {
   const { cartProducts } = newState;
-  const sumQuantity = cartProducts.reduce((acc, item) => ( acc + parseInt(item.quantity)), 0 );
+  const sumQuantity = cartProducts.reduce((acc, item) => ( acc + parseInt(item.choosenQty)), 0 );
   const sumSubTotal = cartProducts.reduce((acc, item) => (acc + parseInt(item.productSubtotal)), 0 );
 
   return { ...newState, sumQuantity, sumSubTotal };

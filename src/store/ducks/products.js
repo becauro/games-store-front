@@ -112,8 +112,14 @@ export const productsActionsCreators = {
     dispatch(pickUpAllProducts());
 
     return fetchAllProducts()
-    .then(({results}) => dispatch(pickUpAllProductsSuccess(results)))
-    .catch((error) => dispatch(pickUpAllProductsError(error)))
+    .then(({results}) => {
+      console.log(results[0]);
+      dispatch(pickUpAllProductsSuccess(results))
+    })
+    .catch((error) => { 
+      dispatch(pickUpAllProductsError(error))
+      }
+    )
   },
   getFilteredProducts: () => (dispatch) => {
     dispatch(pickUpFilteredProducts());
