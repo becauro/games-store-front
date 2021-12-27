@@ -10,42 +10,42 @@ Essa aplicação é um **E-commerce** de uma **Loja de Jogos**.
 
 O **backend** é uma API que desenvolvi para ser usada (consumida) com essa aplicação. Basicamente um Express com MongoDB. No entanto a API se encontra em [outro](https://github.com/becauro/games-store-back) repositório. Apenas siga as instruções de cada um e conseguirá integrar ambos.
 
-### Funcionalidades básicas:
+### Funcionalidades básicas
 
 
 #### Produtos
 
 * **Visualização** de todos produtos cadastrados na Loja.
 * **Visualização** de todos produtos que inclui em seu nome o valor de busca no Filtro de pesquisa.
-* **Inserção** de novo produto (Brevemente).
+* **Inserção** de novo produto (BREVEMENTE).
   * Apenas o `usuário ADM` pode realizar esta operação.
-* **Remoção** de um produto (Brevemente).
+* **Remoção** de um produto (BREVEMENTE).
   * Apenas o `usuário ADM` pode realizar esta operação.
-* **Atualização** de um produto (Brevemente).
+* **Atualização** de um produto (BREVEMENTE).
   * Apenas o `usuário ADM` pode realizar esta operação.
 
 
 #### Carrinho
 
-* **Visualização** de todos produtos no Carrinho da Loja. (Brevemente).
-* **Inserção** de um produto no Carrinho (Brevemente). (Brevemente).
-* **Remoção** de um produto do Carrinho (Brevemente). (Brevemente).
-* **Atualização** de quantidade de um produto no Carrinho (Brevemente).
+* **Visualização** de todos produtos no Carrinho da Loja. 
+* **Inserção** de um produto no Carrinho (BREVEMENTE). 
+* **Remoção** de um produto do Carrinho (BREVEMENTE).
+* **Atualização** de quantidade de um produto no Carrinho (BREVEMENTE).
 
 #### Checkout
 
-* **Visualização** de todos produtos em Checkout. (Brevemente).
-* **Retorno** Retorno para o carrinho sem perder dados. (Brevemente).
-* **Cancelamento** Cancelamento de compra. (Brevemente).
+* **Visualização** de todos produtos em Checkout. (BREVEMENTE).
+* **Retorno** Retorno para o carrinho sem perder dados. (BREVEMENTE).
+* **Cancelamento** Cancelamento de compra. (BREVEMENTE).
 
 
 #### Usuário
 
-* **Visualização** de todos usuário cadastradoos na Loja. (Brevemente).
-* **Inserção** de um usuário na Loja. (Brevemente).
-* **Remoção** de um Usuário na Loja. (Brevemente).
+* **Visualização** de todos usuário cadastradoos na Loja. (BREVEMENTE).
+* **Inserção** de um usuário na Loja. (BREVEMENTE).
+* **Remoção** de um Usuário na Loja. (BREVEMENTE).
   * Apenas o `próprio usuário (cliente))` ou `usuário ADM` pode realizar esta operação.
-* **Atualização** de dados de Usuário (Brevemente).
+* **Atualização** de dados de Usuário (BREVEMENTE).
   * Apenas o `próprio usuário (cliente))` ou ` usuário ADM`  pode realizar esta operação.
 
 ### Tecnologias usadas
@@ -75,4 +75,4 @@ Um vez que no arquivo `package.json` é listado as dependências necessárias, b
 ## Futuras Funcionalidades:
 
 **Cadastro** e **Login** de Usuários (Clientes) na plataforma, cada um tendo sua própria conta para gerenciamento de compras.
-Além das funcionalidades já especificadas como "brevemente" na seção Funcionalidades básicas
+Além das funcionalidades já especificadas como "BREVEMENTE" na seção [Funcionalidades básicas](#funcionalidades-básicas).
