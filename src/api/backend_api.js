@@ -17,11 +17,11 @@ export async function fetchAllProducts() {
 }
 
 export async function fetchFilteredProducts(query) {
-  const gameCategoryId = 'MLB1144';
-  const endpoint = `https://api.mercadolibre.com/sites/MLB/search?category=${gameCategoryId}&q=${query}`;
+
+  const ENDPOINT = `${API}/products/search?name=${query}`;
 
   try {
-    const response = await fetch(endpoint);
+    const response = await fetch(ENDPOINT);
     return response.json();
     
   } catch (error) {

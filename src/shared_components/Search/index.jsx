@@ -1,3 +1,4 @@
+// import React, { useState } from 'react';  // Comment 1
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -7,17 +8,28 @@ import './Search.css';
 
 /* eslint-disable */
 
+/* commnet 1 is about to change to React state to control "inputText" 
+It's seems Redux dev tools get Frozen when use controller component with Redux
+*/
+
 function Search({ getFilteredProducts, fieldOnChange }) {
   const navigate = useNavigate();
+  // const [inputText, setInputText] = useState('');  // Comment 1
   const { pathname} = useLocation();
 
   function searchButton_onclick () {
+    // getFilteredProducts(inputText); // Comment 1
     getFilteredProducts();
     if(pathname !== '/') {
       navigate('/');
       return;
     }
   }
+
+  // function inputTextOnChange(target) { // commnet 1
+  //   const { value } = target;
+  //   setInputText(value);
+  // }
 
   return (
     <div>
@@ -28,6 +40,7 @@ function Search({ getFilteredProducts, fieldOnChange }) {
           data-testid="query-input"
           type="text"
           onChange={ ({target}) => fieldOnChange(target) }
+          // onChange={ ({target}) => inputTextOnChange(target) } // commnet 1
         />
         <button
           className="search-button"

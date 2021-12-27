@@ -26,9 +26,8 @@ class ProductList extends Component {
       },
     } = this.props;
 
-    // DEBUGGER:
-    console.log('products em ProductList component:')
-    console.log(products);
+    console.log('InputText in ProductList');
+    console.log(inputText);
 
     if (loading) {
       return <h2 id="loading">Loading...</h2>;
