@@ -6,6 +6,10 @@ Esse é o código de uma aplicação básica de um **E-commerce** de uma **Loja 
 
 **Observação**: Por ora o projeto não teve foco na estética, pois ainda está em fase de desenvolvimento.
 
+### BACKEND (outro repo):
+
+Aqui está o [link](https://github.com/becauro/games-store-back) do repositório backend relacionado a este aqui.
+
 ### Funcionalidades básicas:
 
 
@@ -66,11 +70,3 @@ Um vez que no arquivo `package.json` é listado as dependências necessárias, b
 ## Futuras Funcionalidades:
 
 **Cadastro** e **Login** de Usuários da plataforma, cada um tendo sua própria conta parar gereniamento de tarefas. Para isso usarei a stack **MERN**.
-
-## Futuras Tecnologias :
-
-1. **Heroku** para deploymeet.
-
-#### BACKEND (outro repo):
-
-Aqui está o [link](https://github.com/becauro/games-store-back) do repositório backend relacionado a este aqui.
