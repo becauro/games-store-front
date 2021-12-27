@@ -21,17 +21,17 @@ class CartProductCard extends React.Component {
 
   fieldOnChange(target) {
     const { moreQty } = this.state;
-    const { value: quantity } = target;
+    const { value: choosenQty } = target;
     const { updateCart, id, price } = this.props;
-    const productSubtotal = price * parseInt(quantity);
+    const productSubtotal = price * parseInt(choosenQty);
    
-    if(quantity !== '10+' || moreQty) {
+    if(choosenQty !== '10+' || moreQty) {
 
       this.setState({
         [target.name]: target.value
       });
       if (moreQty) return; 
-      return updateCart({ id, productSubtotal, quantity });
+      return updateCart({ id, productSubtotal, choosenQty });
     }
 
     this.setState({
@@ -40,10 +40,10 @@ class CartProductCard extends React.Component {
   }
 
   handleUpdateQty() {
-    const { inputQty: quantity } = this.state;
+    const { inputQty: choosenQty } = this.state;
     const { updateCart, id, price } = this.props;
-    const productSubtotal = price * parseInt(quantity);
-    updateCart({ id, productSubtotal, quantity });
+    const productSubtotal = price * parseInt(choosenQty);
+    updateCart({ id, productSubtotal, choosenQty });
   }
 
   deleteFromCart() {
@@ -59,8 +59,7 @@ class CartProductCard extends React.Component {
       title,
       price,
       thumbnail,
-      quantity,
-      shipping,
+      choosenQty,
       availableQuantity,
       productSubtotal
     } = this.props;
@@ -72,9 +71,6 @@ class CartProductCard extends React.Component {
         </div>
         <div className='cart-item-description'>
           <p className="cart-item-title">{title}</p>
-          {shipping.free_shipping ? (
-            <p>Free shipping!</p>
-          ) : null}
           <p className="cart-item-price">
             R$ {price}
           </p>
@@ -106,7 +102,7 @@ class CartProductCard extends React.Component {
               )
             }
           </div>
-          <span id="cart-item-out-qty"> Choosen Quantity: { quantity } </span>
+          <span id="cart-item-out-qty"> Choosen Quantity: { choosenQty } </span>
           <button id="cart-item-io-remove-button" type="button" onClick={ () => this.deleteFromCart() }>Remove</button>
         </div>
         <div className="cart-item-subtotal">
@@ -130,5 +126,4 @@ CartProductCard.propTypes = {
   price: PropTypes.number,
   thumbnail: PropTypes.string,
   id: PropTypes.string,
-  free_shipping: PropTypes.bool,
 }.isRequired;

@@ -24,7 +24,7 @@ class ProductCard extends Component {
 
   handleOnClickCartBtn() {
 
-    const { id, cartReducer: { cartProducts } } = this.props;
+    const { _id: id, cartReducer: { cartProducts } } = this.props;
     const foundProdutct = cartProducts.some(item => item.id === id);
 
 
@@ -40,7 +40,7 @@ class ProductCard extends Component {
 
   setCartBtnLabel = () => {
 
-    const { id, cartReducer: { cartProducts } } = this.props;
+    const { _id: id, cartReducer: { cartProducts } } = this.props;
     const foundProdutct = cartProducts.some(item => item.id === id);
 
     if (foundProdutct) {
@@ -51,32 +51,32 @@ class ProductCard extends Component {
   }
 
   deleteFromCart() {
-    const { id, removeFromCart } = this.props;
+    const { _id: id, removeFromCart } = this.props;
 
     removeFromCart(id);
   }
 
   sendToCart() {
 
-    const { name: title, price, thumbnail, id, description,
+    const { name: title, price, thumbnail, _id: id, description,
       quantity: availableQuantity, addToCart } = this.props;
 
     const object = {
-      productSubtotal: price,
-      choosenQty: 1,
+      title,
       price,
       thumbnail,
+      choosenQty: 1,
       id,
       description,
-      title,
       availableQuantity,
+      productSubtotal: price,
     };
 
     addToCart(object);
   }
 
   render() {
-    const { name: title, price, thumbnail, id, description,
+    const { name: title, price, thumbnail, _id: id, description,
       quantity: availableQuantity } = this.props;
 
     const { inCart } = this.state;
