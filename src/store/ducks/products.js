@@ -1,4 +1,4 @@
-import { fetchAllProducts, fetchFilteredProducts } from '../../api/meli_ecommerce';
+import { fetchAllProducts, fetchFilteredProducts } from '../../api/backend_api';
 
 export const types = {
   FIELD_ON_CHANGE: 'fieldOnChange',
@@ -112,10 +112,16 @@ export const productsActionsCreators = {
     dispatch(pickUpAllProducts());
 
     return fetchAllProducts()
-    .then(({results}) => {
-      dispatch(pickUpAllProductsSuccess(results))
+    .then(({products}) => {
+          // DEBUGGER:
+    console.log('products em Reducer de produtos:')
+    console.log(products);
+  
+      dispatch(pickUpAllProductsSuccess(products))
     })
-    .catch((error) => { 
+    .catch((error) => {
+      console.log('error em Reducer de produtos:')
+      console.log(error);
       dispatch(pickUpAllProductsError(error))
       }
     )
@@ -124,7 +130,7 @@ export const productsActionsCreators = {
     dispatch(pickUpFilteredProducts());
 
     return fetchFilteredProducts(inputText)
-    .then(({results}) => dispatch(pickUpFilteredProductsSuccess(results)))
+    .then(({products}) => dispatch(pickUpFilteredProductsSuccess(products)))
     .catch((error) => dispatch(pickUpFilteredProductsError(error)))
   }
 }

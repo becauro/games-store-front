@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import NoFoundProducts from './NoFoundProducts';
 import ProductCard from './ProductCard';
 import GetAllProductsBtn from '../../shared_components/GetAllProductsBtn';
-import { searchActionsCreators } from '../../store/ducks/products';
+import { productsActionsCreators } from '../../store/ducks/products';
 import './productList.css';
 
 /* eslint-disable */
@@ -18,7 +18,7 @@ class NewProductList extends Component {
 
   render() {
     const { 
-      searchReducer: { 
+      productsReducer: { 
         products,
         noFindProducts,
         inputText,
@@ -55,10 +55,10 @@ class NewProductList extends Component {
   }
 }
 
-const mapStateToProps = ({ search: searchReducer }) => ({ searchReducer });
+const mapStateToProps = ({ products: productsReducer }) => ({ productsReducer });
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(searchActionsCreators, dispatch)
+  return bindActionCreators(productsActionsCreators, dispatch)
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewProductList);

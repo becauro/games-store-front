@@ -26,6 +26,10 @@ class ProductList extends Component {
       },
     } = this.props;
 
+    // DEBUGGER:
+    console.log('products em ProductList component:')
+    console.log(products);
+
     if (loading) {
       return <h2 id="loading">Loading...</h2>;
     }
