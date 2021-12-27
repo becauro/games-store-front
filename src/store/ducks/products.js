@@ -1,9 +1,5 @@
 import { fetchAllProducts, fetchFilteredProducts } from '../../api/backend_api';
 
-/* commnet 1 is about to change to React state to control "inputText" 
-    It's seems Redux dev tools get Frozen when use controller component with Redux
-*/
-
 export const types = {
   FIELD_ON_CHANGE: 'fieldOnChange',
   PICK_UP_ALL_PRODUCTS: 'pickUpAllProducts',
@@ -124,7 +120,6 @@ export const productsActionsCreators = {
       }
     )
   },
-  // getFilteredProducts: (inputText) => (dispatch) => { // Comment 1
   
     getFilteredProducts: () => (dispatch) => {
     dispatch(pickUpFilteredProducts());
