@@ -28,9 +28,9 @@ O **backend** é uma API que desenvolvi para ser usada (consumida) com essa apli
 #### Carrinho
 
 * **Visualização** de todos produtos no Carrinho da Loja. 
-* **Inserção** de um produto no Carrinho (BREVEMENTE). 
-* **Remoção** de um produto do Carrinho (BREVEMENTE).
-* **Atualização** de quantidade de um produto no Carrinho (BREVEMENTE).
+* **Inserção** de um produto no Carrinho. 
+* **Remoção** de um produto do Carrinho.
+* **Atualização** de quantidade de um produto no Carrinho.
 
 #### Checkout
 
@@ -41,7 +41,7 @@ O **backend** é uma API que desenvolvi para ser usada (consumida) com essa apli
 
 #### Usuário
 
-* **Visualização** de todos usuário cadastradoos na Loja. (BREVEMENTE).
+* **Visualização** de todos usuário cadastrados na Loja. (BREVEMENTE).
 * **Inserção** de um usuário na Loja. (BREVEMENTE).
 * **Remoção** de um Usuário na Loja. (BREVEMENTE).
   * Apenas o `próprio usuário (cliente))` ou `usuário ADM` pode realizar esta operação.
