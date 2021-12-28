@@ -6,9 +6,11 @@ Essa aplicação é um **E-commerce** de uma **Loja de Jogos**.
 
 **Observação**: Por ora o projeto não teve foco na estética, pois ainda está em fase de desenvolvimento.
 
-### BACKEND:
+### Tem BACK ?
 
-O **backend** é uma API que desenvolvi para ser usada (consumida) com essa aplicação. Basicamente um Express com MongoDB. No entanto a API se encontra em [outro](https://github.com/becauro/games-store-back) repositório. Apenas siga as instruções de cada um e conseguirá integrar ambos.
+O **backend** é uma API que desenvolvi para ser utilizado pelo Frontend. Basicamente na API usei um Express com MongoDB. No entanto se encontra em [outro](https://github.com/becauro/games-store-back) repositório. 
+
+Siga as instruções de cada repositório e conseguirá integrar ambos projetos.
 
 ### Funcionalidades básicas
 
