@@ -140,12 +140,14 @@ export default class Checkout extends React.Component {
               value="credit-card"
               onChange={ this.handle }
               checked
+              id="credit-card-payment"
             />
-            Credit Card
-            <input name="method" type="radio" value="debit-card" onChange={ this.handle } />
-            Debit Card
-            <input name="method" type="radio" value="btc" onChange={ this.handle } />
-            BTC
+              <label htmlFor="credit-card-payment">Credit Card</label>
+            <input id="debit-card-payment" name="method" type="radio" value="debit-card" onChange={ this.handle } />
+              <label htmlFor="debit-card-payment" >Debit Card</label>
+            <input id="btc-payment" name="method" type="radio" value="btc" onChange={ this.handle } />
+              <label htmlFor="btc-payment" >BTC</label>
+            
           </fieldset>
           <button id="buy-button" type="button" onClick={ this.handleCheck }>BUY</button>
         </form>
