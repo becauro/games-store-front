@@ -19,7 +19,7 @@ export default class Checkout extends React.Component {
       phone: '',
       cep: '',
       address: '',
-      method: 'credit-card',
+      method: ' ',
       fulled: false,
 
     };
@@ -35,7 +35,7 @@ export default class Checkout extends React.Component {
     const { fullname, email, cpf, phone, cep, address, method } = this.state;
     if (fullnameRegexp.test(fullname) && cpfRegexp.test(cpf) && emailRegexp.test(email)
     && phoneRegexp.test(phone) && cepRegexp.test(cep) && addressRegxp.test(address)
-    && method !== '') {
+    && method !== ' ') {
       this.setState({ fulled: true });
     }
   }
@@ -48,7 +48,7 @@ export default class Checkout extends React.Component {
     });
   }
 
-  handle({ target }) {
+  handle(target) {
     this.setState({ [target.name]: target.value });
   }
 
@@ -78,7 +78,7 @@ export default class Checkout extends React.Component {
               pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]{3,}"
               title="At least 3 characters"
               placeholder="fullname"
-              onChange={ this.handle }
+              onChange={ ({ target }) => this.handle(target) }
             />
             <input
               name="email"
@@ -88,7 +88,7 @@ export default class Checkout extends React.Component {
               title="Format: nick@something.something"
               placeholder="E-mail"
               maxLength="50"
-              onChange={ this.handle }
+              onChange={ ({ target }) => this.handle(target) }
             />
             <input
               name="cpf"
@@ -98,7 +98,7 @@ export default class Checkout extends React.Component {
               title="Format: 000.000.000-00"
               placeholder="CPF"
               maxLength="14"
-              onChange={ this.handle }
+              onChange={ ({ target }) => this.handle(target) }
             />
             <input
               name="phone"
@@ -108,7 +108,7 @@ export default class Checkout extends React.Component {
               title="00 0000-0000 or 00 00000-0000"
               placeholder="Phone Number"
               maxLength="14"
-              onChange={ this.handle }
+              onChange={ ({ target }) => this.handle(target) }
             />
             <input
               name="cep"
@@ -119,7 +119,7 @@ export default class Checkout extends React.Component {
               minLength="9"
               maxLength="9"
               placeholder="CEP"
-              onChange={ this.handle }
+              onChange={ ({ target }) => this.handle(target) }
             />
             <input
               name="address"
@@ -129,7 +129,7 @@ export default class Checkout extends React.Component {
               title="At least 10 characters"
               maxLength="50"
               placeholder="Address"
-              onChange={ this.handle }
+              onChange={ ({ target }) => this.handle(target) }
             />
           </fieldset>
           <fieldset>
@@ -138,14 +138,13 @@ export default class Checkout extends React.Component {
               name="method"
               type="radio"
               value="credit-card"
-              onChange={ this.handle }
-              checked
+              onChange={ ({ target }) => this.handle(target) }
               id="credit-card-payment"
             />
               <label htmlFor="credit-card-payment">Credit Card</label>
-            <input id="debit-card-payment" name="method" type="radio" value="debit-card" onChange={ this.handle } />
+            <input id="debit-card-payment" name="method" type="radio" value="debit-card" onChange={ ({ target }) => this.handle(target) } />
               <label htmlFor="debit-card-payment" >Debit Card</label>
-            <input id="btc-payment" name="method" type="radio" value="btc" onChange={ this.handle } />
+            <input id="btc-payment" name="method" type="radio" value="btc" onChange={ ({ target }) => this.handle(target) } />
               <label htmlFor="btc-payment" >BTC</label>
             
           </fieldset>
