@@ -1,4 +1,6 @@
 import React from 'react';
+import './checkout.css';
+
 const fullnameRegexp = new RegExp('[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]{3}');
 const cpfRegexp = new RegExp('^([0-9]){3}.([0-9]){3}.([0-9]){3}-([0-9]){2}$');
 const emailRegexp = new RegExp('\\S+@\\S+\\.\\S+');
@@ -58,20 +60,19 @@ export default class Checkout extends React.Component {
     }
 
     return (
-      <div>
+      <div id="checkout-page-div">
         <h1>Checkout</h1>
         <form>
           <fieldset>
-            <p>
+            <h2>
               {`Subtotal: R$ ${subtotal}`}
-            </p>
+            </h2>
           </fieldset>
           <fieldset>
             <legend><h2>Customer data</h2></legend>
             <input
               name="fullname"
               value={ fullname }
-              data-testid="checkout-fullname"
               type="text"
               maxLength="50"
               pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]{3,}"
@@ -82,7 +83,6 @@ export default class Checkout extends React.Component {
             <input
               name="email"
               value={ email }
-              data-testid="checkout-email"
               type="text"
               pattern="\S+@\S+\.\S+"
               title="Format: nick@something.something"
@@ -93,7 +93,6 @@ export default class Checkout extends React.Component {
             <input
               name="cpf"
               value={ cpf }
-              data-testid="checkout-cpf"
               type="text"
               pattern="^([0-9]){3}.([0-9]){3}.([0-9]){3}-([0-9]){2}$"
               title="Format: 000.000.000-00"
@@ -104,7 +103,6 @@ export default class Checkout extends React.Component {
             <input
               name="phone"
               value={ phone }
-              data-testid="checkout-phone"
               type="text"
               pattern="(\d{2})\s(\d{4,5})-(\d{4})"
               title="00 0000-0000 or 00 00000-0000"
@@ -115,7 +113,6 @@ export default class Checkout extends React.Component {
             <input
               name="cep"
               value={ cep }
-              data-testid="checkout-cep"
               type="text"
               pattern="[0-9]{5}-[0-9]{3}$"
               title="Format: 00000-000"
@@ -127,7 +124,6 @@ export default class Checkout extends React.Component {
             <input
               name="address"
               value={ address }
-              data-testid="checkout-address"
               type="text"
               pattern="[a-zA-Z0-9 '-/(/)]{10,}"
               title="At least 10 characters"
@@ -151,7 +147,7 @@ export default class Checkout extends React.Component {
             <input name="method" type="radio" value="btc" onChange={ this.handle } />
             BTC
           </fieldset>
-          <button type="button" onClick={ this.handleCheck }>BUY</button>
+          <button id="buy-button" type="button" onClick={ this.handleCheck }>BUY</button>
         </form>
       </div>
     );
