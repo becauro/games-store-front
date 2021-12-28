@@ -57,8 +57,9 @@ O **backend** é uma API que desenvolvi para ser usada (consumida) com essa apli
 
 ### Requisitos para configurar e rodar o projeto em modo desenvolvimento:
 
-1. Ter **Node.js** para baixar as dependências via NPM.
-2. Ter um **Browser** compatível com as últimas tecnologias de mercado ( ex.: _Chrome_ ou _Firefox_) para interação com a interface da Aplicação.
+1. Ter **Node.js** instalado para que seja possível baixar as dependências necessaŕias via NPM.
+2. Ter o servidor da [API de BackEnd](https://github.com/becauro/games-store-back) baixado.
+3. Ter um **Browser** compatível com as últimas tecnologias de mercado ( ex.: _Chrome_ ou _Firefox_) para interação com a interface da Aplicação.
 
 ### Como configurar as dependências do projeto:
 
@@ -66,13 +67,21 @@ Um vez que no arquivo `package.json` é listado as dependências necessárias, b
 
     `npm install`
 
-### Como executar o projeto:
+### Como configurar e executar o projeto:
 
-1. Estando dentro pasta do projeto, basta executar o comando: `npm start`
-2. Em seguida, abra o navegador e digite: **http://127.0.0.1:3000** ( ou use com a porta que o Sistema Operacional escolher, caso a 3000 (padrão do `create react-app`) já esteja em uso).
+1. Estando dentro pasta do projeto, basta executar o comando: `npm start` para que seja instalada e configurada as dependências necessárias.
+2. Execute o servidor da [API de BackEnd](https://github.com/becauro/games-store-back) seguindo as orientações que constam no seu Readme.
+3. Verifique no arquivo `src/api/backend_api.js` se a porta que aponta para o **servidor backend** está correta de acordo com a porta que de fato o servidor backend estar rodando. Caso contrário, mude da forma que achar melhor.
+4. Em seguida, estando dentro da pasta do projeto, execute-o com o comando `npm start` e, caso o navegador não seja aberto  automáticamente com a aplicação, abra-o, manualmente, e digite: **http://127.0.0.1:3000** ( ou use com a porta que o Sistema Operacional escolher, caso a 3000 (padrão do `create react-app`) já esteja em uso).
 
 
 ## Futuras Funcionalidades:
 
 **Cadastro** e **Login** de Usuários (Clientes) na plataforma, cada um tendo sua própria conta para gerenciamento de compras.
-Além das funcionalidades já especificadas como "BREVEMENTE" na seção [Funcionalidades básicas](#funcionalidades-básicas).
+
+Além das funcionalidades já especificadas como "BREVEMENTE", na seção [Funcionalidades básicas](#funcionalidades-básicas), lembra ?
+
+---
+
+Chegou até ? Obrigado.
+Aproveita e dê quele `code Review` pra ajudar ;-)
