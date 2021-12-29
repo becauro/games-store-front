@@ -1,12 +1,12 @@
 import React from 'react';
 import './checkout.css';
 
-// const fullnameRegexp = new RegExp('[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]{3}');
-// const cpfRegexp = new RegExp('^([0-9]){3}.([0-9]){3}.([0-9]){3}-([0-9]){2}$');
-// const emailRegexp = new RegExp('\\S+@\\S+\\.\\S+');
-// const phoneRegexp = new RegExp('\\d{2}\\s\\d{4,5}\\-\\d{4}$');
-// const cepRegexp = new RegExp('[0-9]{5}-[0-9]{3}$');
-// const addressRegxp = new RegExp('[a-zA-Z0-9 ,.]{10}');
+const fullnameRegexp = new RegExp('[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]{3}');
+const cpfRegexp = new RegExp('^([0-9]){3}.([0-9]){3}.([0-9]){3}-([0-9]){2}$');
+const emailRegexp = new RegExp('\\S+@\\S+\\.\\S+');
+const phoneRegexp = new RegExp('\\d{2}\\s\\d{4,5}\\-\\d{4}$');
+const cepRegexp = new RegExp('[0-9]{5}-[0-9]{3}$');
+const addressRegxp = new RegExp('[a-zA-Z0-9 ,.]{10}');
 
 
 export default class Checkout extends React.Component {
@@ -38,30 +38,40 @@ export default class Checkout extends React.Component {
   handleCheck = () => {
     const { fulled, valid } = this.state;
 
-    if (fulled || valid) {
+    if (fulled && valid) {
       this.setState({
         all_ok: true
       })
     }
   }
 
-  // checkValidField() {
-  //   const { fullname, email, cpf, phone, cep, address, method } = this.state;
-  //   if (fullnameRegexp.test(fullname) && cpfRegexp.test(cpf) && emailRegexp.test(email)
-  //   && phoneRegexp.test(phone) && cepRegexp.test(cep) && addressRegxp.test(address)
-  //   && method !== ' ') {
-  //     this.setState({ valid: true });
-  //   }
-  // }
+  checkValidField() {
+    const { fullname, email, cpf, phone, cep, address } = this.state;
+
+        if (fullnameRegexp.test(fullname) && cpfRegexp.test(cpf) && emailRegexp.test(email)
+        && phoneRegexp.test(phone) && cepRegexp.test(cep) && addressRegxp.test(address)) {
+
+          this.setState({
+            errorMsg: '',
+            valid: true
+          });
+
+        } else {
+    
+          this.setState({
+            errorMsg: 'There is invalid field',
+            valid: false
+          })
+      
+        }     
+  }
 
   checkEmptyField = () => {
 
     const { fullname, email, cpf, phone, cep, address, method } = this.state;
 
     if (fullname === '' || email === '' || cpf === ''
-    || phone === '' || cep === '' || address === '' || method === '') {
-
-      // console.log('Entrou no IF');
+      || phone === '' || cep === '' || address === '' || method === '') {
       
       this.setState({
         errorMsg: 'There is required field empty',
@@ -69,12 +79,13 @@ export default class Checkout extends React.Component {
       })
 
     } else {
-      // console.log('Entrou no ELSE');
       
       this.setState({
         errorMsg: '',
         fulled: true
-      })
+      });
+
+      this.checkValidField();
     }
   }
 
