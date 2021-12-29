@@ -6,6 +6,19 @@ Essa aplicação é um **E-commerce** de uma **Loja de Jogos**.
 
 **Observação**: Por ora o projeto não teve foco na estética, pois ainda está em fase de desenvolvimento.
 
+### AVISO IMPORTANTE
+
+
+Ao executar a aplicação em Modo Dev, desative o `Redux-Dev-Tools` pelo menos no plugin do davegador, porque comigo ele deixa aplicação lenta e trava o navegador. Isso começou desde quando usei componente controlado diretamente com estado do Redux ao invés do estado local.
+
+Me refiro ao componente `Search` que se encontra na pasta `shared_component folder`.
+
+Quando uso esse componente controlado pelo estado local, flui de boa. Acredito que seja por causa de algum bug no Plugin do React-Dev-Tool ou alguma feature de otimização que precisa ser configurada nele, para que lide com "componentes controlados" pelo Redux. (Sorry, guys!).
+
+Se descobrir algo que possa resolver, fique à vontade de me contactar. Mas também quero analisar com calma, depois, para tentar averiguar melhor onde, de fato, está o problema.
+ 
+
+
 ### Tem BACK ?
 
 O **backend** é uma API que desenvolvi para ser utilizado pelo Frontend. Basicamente na API usei um Express com MongoDB. No entanto se encontra em [outro](https://github.com/becauro/games-store-back) repositório. 
