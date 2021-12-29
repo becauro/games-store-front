@@ -18,46 +18,40 @@ Siga as instruções de cada repositório e conseguirá integrar ambos projetos.
 #### Produtos
 
 * **Visualização** de todos produtos cadastrados na Loja.
-* **Visualização** de todos produtos que inclui em seu nome o valor de busca no Filtro de pesquisa.
-* **Cadastro** de novo produto na plataforma. (BREVEMENTE)
-  * Apenas o `usuário ADM` pode realizar esta operação.
-* **Remoção** de um produto da plataforma. (BREVEMENTE)
-  * Apenas o `usuário ADM` pode realizar esta operação.
-* **Atualização** de um produto na plataforma. (BREVEMENTE)
-  * Apenas o `usuário ADM` pode realizar esta operação.
+* **Visualização** de todos produtos que inclui em seu nome a string digitada no campo do Filtro de busca.
+* **Cadastro*** de novo produto na plataforma. (BREVEMENTE)
+* **Remoção*** de um produto da plataforma. (BREVEMENTE)
+* **Atualização*** de um produto na plataforma. (BREVEMENTE)
 
+<span style="font-size: 12px"> (*) Apenas o `usuário ADM` pode realizar esta operação. </span>(BREVEMENTE)
 
 #### Carrinho
 
-* **Visualização** de todos produtos no Carrinho da Loja.
-  * Apenas o `próprio usuário (cliente)` pode realizar esta operação. (BREVEMENTE)
-* **Inserção** de um produto no Carrinho.
-  * Apenas o `próprio usuário (cliente)` pode realizar esta operação. (BREVEMENTE)
-* **Remoção** de um produto do Carrinho.
-  * Apenas o `próprio usuário (cliente)` pode realizar esta operação. (BREVEMENTE)
-* **Atualização** de quantidade de um produto no Carrinho.
-  * Apenas o `próprio usuário (cliente)` pode realizar esta operação. (BREVEMENTE)
+* **Visualização*** de todos produtos no Carrinho da Loja.
+* **Inserção*** de um produto no Carrinho.
+* **Remoção*** de um produto do Carrinho.
+* **Atualização*** de quantidade de um produto no Carrinho.
+* **Encaminhamento*** para página de Checkout.
 
+<span style="font-size: 12px"> (*) Apenas o `próprio usuário (cliente)` pode realizar esta operação. </span> (BREVEMENTE)
 
 #### Checkout
 
-* **Inserção** de dados do cliente para compra do(s) produto(s).
-  * Apenas o `próprio usuário (cliente)` pode realizar esta operação. (BREVEMENTE)
-* **Comprar** os produtos.
-  * Apenas o `próprio usuário (cliente)` pode realizar esta operação. (BREVEMENTE)
-* **Cancelamento** de compra. (BREVEMENTE)
-  * Apenas o `próprio usuário (cliente)` pode realizar esta operação. (BREVEMENTE)
+* **Inserção*** de dados do cliente para compra do(s) produto(s).
+* **Comprar*** os produtos.
+* **Cancelamento*** de compra. (BREVEMENTE)
 
+<span style="font-size: 12px"> (*) Apenas o `próprio usuário (cliente)` pode realizar esta operação. </span> (BREVEMENTE)
 
 #### Usuário
 
 * **Visualização** de todos usuário cadastrados na Loja. (BREVEMENTE)
   * Apenas o `usuário ADM` pode realizar esta operação. 
 * **Cadastro** de usuário na Loja. (BREVEMENTE)
-* **Remoção** de um Usuário na Loja. (BREVEMENTE)
-  * Apenas o `próprio usuário (cliente)` ou `usuário ADM` pode realizar esta operação.
-* **Atualização** de dados de Usuário (BREVEMENTE)
-  * Apenas o `próprio usuário (cliente)` ou ` usuário ADM`  pode realizar esta operação.
+* **Remoção*** de um Usuário na Loja. (BREVEMENTE)
+* **Atualização*** de dados de Usuário (BREVEMENTE)
+
+<span style="font-size: 12px"> (*) Apenas o `próprio usuário (cliente)` ou `usuário ADM` pode realizar esta operação. </span> (BREVEMENTE)
 
 ### Tecnologias usadas
 
