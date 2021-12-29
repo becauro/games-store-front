@@ -12,43 +12,52 @@ O **backend** é uma API que desenvolvi para ser utilizado pelo Frontend. Basica
 
 Siga as instruções de cada repositório e conseguirá integrar ambos projetos.
 
-### Funcionalidades básicas
+### Funcionalidades
 
 
 #### Produtos
 
 * **Visualização** de todos produtos cadastrados na Loja.
 * **Visualização** de todos produtos que inclui em seu nome o valor de busca no Filtro de pesquisa.
-* **Inserção** de novo produto (BREVEMENTE).
+* **Cadastro** de novo produto na plataforma. (BREVEMENTE)
   * Apenas o `usuário ADM` pode realizar esta operação.
-* **Remoção** de um produto (BREVEMENTE).
+* **Remoção** de um produto da plataforma. (BREVEMENTE)
   * Apenas o `usuário ADM` pode realizar esta operação.
-* **Atualização** de um produto (BREVEMENTE).
+* **Atualização** de um produto na plataforma. (BREVEMENTE)
   * Apenas o `usuário ADM` pode realizar esta operação.
 
 
 #### Carrinho
 
-* **Visualização** de todos produtos no Carrinho da Loja. 
-* **Inserção** de um produto no Carrinho. 
+* **Visualização** de todos produtos no Carrinho da Loja.
+  * Apenas o `próprio usuário (cliente)` pode realizar esta operação. (BREVEMENTE)
+* **Inserção** de um produto no Carrinho.
+  * Apenas o `próprio usuário (cliente)` pode realizar esta operação. (BREVEMENTE)
 * **Remoção** de um produto do Carrinho.
+  * Apenas o `próprio usuário (cliente)` pode realizar esta operação. (BREVEMENTE)
 * **Atualização** de quantidade de um produto no Carrinho.
+  * Apenas o `próprio usuário (cliente)` pode realizar esta operação. (BREVEMENTE)
+
 
 #### Checkout
 
-* **Visualização** de todos produtos em Checkout. (BREVEMENTE).
-* **Retorno** Retorno para o carrinho sem perder dados. (BREVEMENTE).
-* **Cancelamento** Cancelamento de compra. (BREVEMENTE).
+* **Inserção** de dados do cliente para compra do(s) produto(s).
+  * Apenas o `próprio usuário (cliente)` pode realizar esta operação. (BREVEMENTE)
+* **Comprar** os produtos.
+  * Apenas o `próprio usuário (cliente)` pode realizar esta operação. (BREVEMENTE)
+* **Cancelamento** de compra. (BREVEMENTE)
+  * Apenas o `próprio usuário (cliente)` pode realizar esta operação. (BREVEMENTE)
 
 
 #### Usuário
 
-* **Visualização** de todos usuário cadastrados na Loja. (BREVEMENTE).
-* **Inserção** de um usuário na Loja. (BREVEMENTE).
-* **Remoção** de um Usuário na Loja. (BREVEMENTE).
-  * Apenas o `próprio usuário (cliente))` ou `usuário ADM` pode realizar esta operação.
-* **Atualização** de dados de Usuário (BREVEMENTE).
-  * Apenas o `próprio usuário (cliente))` ou ` usuário ADM`  pode realizar esta operação.
+* **Visualização** de todos usuário cadastrados na Loja. (BREVEMENTE)
+  * Apenas o `usuário ADM` pode realizar esta operação. 
+* **Cadastro** de usuário na Loja. (BREVEMENTE)
+* **Remoção** de um Usuário na Loja. (BREVEMENTE)
+  * Apenas o `próprio usuário (cliente)` ou `usuário ADM` pode realizar esta operação.
+* **Atualização** de dados de Usuário (BREVEMENTE)
+  * Apenas o `próprio usuário (cliente)` ou ` usuário ADM`  pode realizar esta operação.
 
 ### Tecnologias usadas
 
