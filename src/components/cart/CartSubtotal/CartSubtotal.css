@@ -17,4 +17,6 @@
 button {
   background-color: rgb(81 165 42);
   color: white;
+  text-align: center;
+  padding: 3px;
 }
