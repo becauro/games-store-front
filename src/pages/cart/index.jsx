@@ -4,10 +4,11 @@ import Header from '../../shared_components/Header';
 import CartList from '../../components/cart/CartList';
 import CartSubtotal from '../../components/cart/CartSubtotal';
 
-export default class Cart extends React.Component {
+// export default class Cart extends React.Component {
+  export default function Cart() {
     // constructor() {}
 
-  render() {
+  // render() {
     return (
       <div className="cart-page">
         <Header />
@@ -16,5 +17,5 @@ export default class Cart extends React.Component {
         <CartSubtotal />
       </div>
     )
-  }
+  // }
 }

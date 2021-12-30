@@ -1,9 +1,9 @@
 .cart-subtotal {
   background-color: rgb(213 214 219);
-  border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: start;
+  border-radius: 15px;
   margin-top: 10%;
   margin-left: 80%;
   padding: 1%;

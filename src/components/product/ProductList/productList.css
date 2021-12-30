@@ -1,6 +1,7 @@
 #home-initial-message {
   display: flex;
-  background-color: blueviolet;
+  background-color: rgb(81 165 42);
+  color: white;
   width: 100%;
   position: relative;
   top: 80px;
@@ -16,11 +17,16 @@
 }
 
 .product-card-list {
+  background-color: rgb(213 214 219);
   display: flex;
   flex-wrap: wrap;
+  border-radius: 15px;
+  width: 75%;
+  height: fit-content;
+  padding: 10px;
+  margin-top: 10%;
   justify-content: space-around;
-  top: 80px;
-  position: relative;
+  position: absolute;
 }
 
 h1 {

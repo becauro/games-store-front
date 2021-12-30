@@ -6,10 +6,9 @@ import './homePage.css';
 export default function Home() {
 
   return (
-    <>
+    <div className="home-page">
       <Header />
       <ProductList />
-    </>
+    </div>
   )
 }
-
