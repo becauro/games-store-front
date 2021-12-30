@@ -9,13 +9,13 @@ Essa aplicação é um **E-commerce** de uma **Loja de Jogos**.
 ### AVISO IMPORTANTE
 
 
-Ao executar a aplicação em Modo Dev, desative o `Redux-Dev-Tools` pelo menos no plugin do davegador, porque comigo ele deixa aplicação lenta e trava o navegador. Isso começou desde quando usei componente controlado diretamente com estado do Redux ao invés do estado local.
+Ao executar a aplicação (em Modo Dev, claro), desative o `Redux-Dev-Tools` pelo menos no plugin do davegador, porque comigo o plugin deixa aplicação lenta e trava o navegador quando comecei a usar um componente controlado conectado diretamente com estado gerenciado pelo Redux, ao invés do estado local do React.
 
 Me refiro ao componente `Search` que se encontra na pasta `shared_component folder`.
 
-Quando uso esse componente controlado pelo estado local, flui de boa. Acredito que seja por causa de algum bug no Plugin do React-Dev-Tool ou alguma feature de otimização que precisa ser configurada nele, para que lide com "componentes controlados" pelo Redux. (Sorry, guys!).
+Tanto que deixa lento apenas quando se ativa o Plugin. Acredito que seja por causa de algum bug no Plugin ou alguma feature de otimização nele que precisa ser configurada nele, para que lide com "componentes controlados" pelo Redux. Ou pode ser problema no meu código mesmo, sei lá.
 
-Se descobrir algo que possa resolver, fique à vontade de me contactar. Mas também quero analisar com calma, depois, para tentar averiguar melhor onde, de fato, está o problema.
+Se você descobrir algo que possa resolver, fique à vontade de me contactar. De qualquer forma, quando eu tiver mais tempo, irei averiguar melhor isso.
  
 
 
