@@ -17,7 +17,7 @@
 }
 
 .product-card-list {
-  background-color: rgb(213 214 219);
+  /* background-color: rgb(213 214 219); */
   display: flex;
   flex-wrap: wrap;
   border-radius: 15px;

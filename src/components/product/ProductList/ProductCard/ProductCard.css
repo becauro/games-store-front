@@ -2,16 +2,21 @@
   background-color: white;
   border-radius: 5px;
   display: inline-block;
-  margin: 5px;
-  max-width: 100%;
+  margin: 25px;
+  padding: 10px;
+  margin-bottom: 0;
   text-align: center;
   transition: 1s;
   width: 250px;
+  height: fit-content;
+  box-shadow: 5px 5px 5px 0.1px rgb(158 157 157);
+
 }
 
 .product-card:hover {
-  box-shadow: 5px 3px 2px 5px rgb(158 157 157);
-  transition: 1s;
+  box-shadow: 15px 15px 12px 15px rgb(158 157 157);
+  transition: 0.2s;
+  margin-top: 0;
 }
 
 img {
@@ -22,16 +27,23 @@ img {
 }
 
 .add-cart-button {
-  background-color: #eee;
-  border: 1px solid #252525;
+  background-color: rgb(81 165 42);
   border-radius: 2px;
-  color: #333;
   margin-bottom: 15px;
-  padding: 4px;
+  margin-top: 5px;
+  padding: 5px;
+  box-shadow: 5px 10px 5px 0.1px rgb(158 157 157);
+  /* border: 1px solid; */
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
 }
 
 .price {
-  color: #00a650;
+  color: blueviolet;
+  font-weight: bold;
 }
 
 .link-product-card {
