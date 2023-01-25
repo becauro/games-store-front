@@ -16,4 +16,4 @@ ENV REACT_APP_API_PORT 3001
 
 EXPOSE 3000
 
-ENTRYPOINT ["./start.sh"]
+ENTRYPOINT ["./docker-with-back.sh"]
