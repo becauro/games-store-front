@@ -1,0 +1,20 @@
+# Se pretende usar essa plicação junto com aplicação de backend, mas sem usar o docker compose, mude o valor de REACT_APP_WITH_BACK para "true"; 
+# Mude por aqui ou quando subir container parar deste Dockefile.  
+
+services:
+
+  frontend:   
+    build: .
+    ports:
+      - 3000:3000            
+    environment:
+      - REACT_APP_API_HOST=games-store-back  
+      - REACT_APP_API_PORT=3001
+      - REACT_APP_WITH_BACK=false
+    networks:
+      - games-store 
+
+
+networks:
+  games-store:
+    name: games-store
