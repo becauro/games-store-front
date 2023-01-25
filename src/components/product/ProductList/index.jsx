@@ -26,11 +26,7 @@ class ProductList extends Component {
       },
     } = this.props;
 
-    if (loading) {
-      return <h2 id="loading">Loading...</h2>;
-    }
-
-    return (
+    return loading ?  <h2 id="loading">Loading...</h2> : (
       <div className="product-list">    
         {!inputText && (
           <h3 id="home-initial-message">
