@@ -2,9 +2,11 @@
 
 ### Introdução:
 
-Essa aplicação é um **E-commerce** de uma **Loja de Jogos**.
+Essa aplicação é um frontend de uma **Loja que venda computador e acessórios gamer**.
 
-**Observação**: Por ora o projeto não teve foco na estética, pois ainda está em fase de desenvolvimento.
+Por padrão os dados são lidos de um arquivo JSON (que está em public/local_data.json).
+
+**Observação**: Por ora o projeto não teve foco nenhum em estética.
 
 ### AVISO IMPORTANTE
 
@@ -13,10 +15,7 @@ Ao executar a aplicação (em Modo Dev, claro), desative o `Redux-Dev-Tools` pel
 
 Me refiro ao componente `Search` que se encontra na pasta `shared_component folder`.
 
-Tanto que deixa lento apenas quando se ativa o Plugin. Acredito que seja por causa de algum bug no Plugin ou alguma feature de otimização nele que precisa ser configurada nele, para que lide com "componentes controlados" pelo Redux. Ou pode ser problema no meu código mesmo, sei lá.
-
-Se você descobrir algo que possa resolver, fique à vontade de me contactar. De qualquer forma, quando eu tiver mais tempo, irei averiguar melhor isso.
- 
+Tanto que deixa lento apenas quando se ativa o Plugin. Acredito que seja por causa de algum bug no Plugin ou alguma feature de otimização nele que precisa ser configurada nele, para que lide com "componentes controlados" pelo Redux. Ou pode ser problema no meu código mesmo, tenho que ver isso depois também.
 
 
 ### Tem BACK ?
@@ -24,6 +23,12 @@ Se você descobrir algo que possa resolver, fique à vontade de me contactar. De
 O **backend** é uma API que desenvolvi para ser utilizado pelo Frontend. Basicamente na API usei um Express com MongoDB. No entanto se encontra em [outro](https://github.com/becauro/games-store-back) repositório. 
 
 Siga as instruções de cada repositório e conseguirá integrar ambos projetos.
+
+Por padrão os dados são lidos de um arquivo JSON (que está em public/local_data.json).
+Para usar esse repositório de frontend junto com [repositório backend](https://github.com/becauro/games-store-back), precisa mudar a variável de ambiente, REACT_APP_WITH_BACK, para ter o valor true.
+A função que chama API ler essa variável, REACT_APP_WITH_BACK, para decidir por onde fazer a requisição.
+
+Coloquei uma mensagem no console do browser que ajudar a lembrar se está ou não sendo usado backend.
 
 ### Funcionalidades
 
