@@ -2,11 +2,11 @@
 
 ### Introdução:
 
-Essa aplicação é um frontend de uma **Loja que venda computador e acessórios gamer**.
+Essa aplicação é um frontend de uma **Loja virtual** de computador e acessórios voltado para o público gamer.
 
 Por padrão os dados são lidos de um arquivo JSON (que está em public/local_data.json).
 
-**Observação**: Por ora o projeto não teve foco nenhum em estética.
+**Observação**: Por ora o projeto não teve foco em estética. Mas vou tentar melhorar nisso aos poucos.
 
 ### AVISO IMPORTANTE
 
