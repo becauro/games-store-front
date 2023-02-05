@@ -58,7 +58,7 @@ class CartProductCard extends React.Component {
     const {
       title,
       price,
-      thumbnail,
+      src_img,
       choosenQty,
       availableQuantity,
       productSubtotal
@@ -67,7 +67,7 @@ class CartProductCard extends React.Component {
     return (
       <div className="cart-product-card">
         <div className="cart-item-image">
-          <img src={ thumbnail } alt={ title } />
+          <img src={ src_img } alt={ title } />
         </div>
         <div className='cart-item-description'>
           <p className="cart-item-title">{title}</p>
@@ -124,6 +124,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(CartProductCard);
 CartProductCard.propTypes = {
   title: PropTypes.string,
   price: PropTypes.number,
-  thumbnail: PropTypes.string,
+  src_img: PropTypes.string,
   id: PropTypes.string,
 }.isRequired;
