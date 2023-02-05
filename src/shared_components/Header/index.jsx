@@ -19,6 +19,7 @@ function Header({cartReducer: { cartProducts }}) {
   const sum = cartProducts.reduce((acc, item) => ( acc + parseInt(item.choosenQty)), 0 );
     return (
     <div className="header">
+      <button type="button" className='home-button' onClick={ () => navigate('/') }> Home </button>
       <Search />
       <button type="button" className="cart-button" onClick={ () => cartButton_onclick() }>
         Cart 🛒 &nbsp;
