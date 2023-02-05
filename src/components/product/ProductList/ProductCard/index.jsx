@@ -61,10 +61,12 @@ class ProductCard extends Component {
     const { name: title, price, thumbnail, _id: id, description,
       quantity: availableQuantity, addToCart } = this.props;
 
+    const src_img = thumbnail.replace('localhost', `${process.env.REACT_APP_API_HOST}`);
+
     const object = {
       title,
       price,
-      thumbnail,
+      src_img,
       choosenQty: 1,
       id,
       description,
@@ -79,6 +81,8 @@ class ProductCard extends Component {
     const { name: title, price, thumbnail, _id: id, description,
       quantity: availableQuantity } = this.props;
 
+    const src_img = thumbnail.replace('localhost', `${process.env.REACT_APP_API_HOST}`);
+    
     const { inCart } = this.state;
 
     return (
@@ -88,13 +92,13 @@ class ProductCard extends Component {
           to={ {
             pathname: `/product/details/${id}`,
             state: {
-              title, price, thumbnail, id, description,
+              title, price, src_img, id, description,
               availableQuantity
             },
           } }
         >
           <p className="title">{title}</p>
-          <img src={ thumbnail } alt={ title } />
+          <img src={ src_img } alt={ title } />
           <p className="price">
             R$
             {price}
